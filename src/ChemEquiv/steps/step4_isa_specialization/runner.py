@@ -191,16 +191,18 @@ class Step4IsASpecialization:
         *,
         ctx: Optional[PipelineContext] = None,
     ) -> bool:
-        # No reference mass => do not filter (preserve old behavior)
+        # If we don't have a reference mass, we can't apply the criterion -> keep old behavior
         if ref_mass is None:
             return True
 
         cand_mass = self._get_chebi_mass(candidate_chebi, ctx=ctx)
+
+        # STRICT: if reference mass exists, candidate MUST have mass to be considered
         if cand_mass is None:
-            # lenient default (same rationale as Step3): keep if candidate mass missing
-            return True
+            return False
 
         return abs(cand_mass - float(ref_mass)) <= float(self.mass_tolerance)
+
 
     def set_shared_resources(
         self,
@@ -375,6 +377,13 @@ class Step4IsASpecialization:
                 onto=self._onto,
                 max_depth=self.max_is_a_depth,
             )
+
+            # 1b) MASS FILTER on is_a children (strict when ref_mass exists)
+            if ref_mass is not None and isa_children:
+                isa_children = {
+                    cid for cid in isa_children
+                    if self._within_mass_tolerance(ref_mass, cid, ctx=ctx)
+                }
 
             # 2) RO expansion on children
             isa_children_equiv = (

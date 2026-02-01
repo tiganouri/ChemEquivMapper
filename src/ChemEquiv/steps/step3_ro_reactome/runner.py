@@ -199,17 +199,18 @@ class Step3RO:
         *,
         ctx: Optional[PipelineContext] = None,
     ) -> bool:
+        # If we don't have a reference mass, we can't apply the criterion 
         if ref_mass is None:
-            # If no reference mass exists, do NOT filter (keeps old behavior)
             return True
 
         cand_mass = self._get_chebi_mass(candidate_chebi, ctx=ctx)
-        if cand_mass is None:
-            # if we can't get candidate mass, safest minimal-change behavior:
-            # keep it (or flip to False if you prefer strict filtering)
-            return True
 
-        return abs(cand_mass - ref_mass) <= float(self.mass_tolerance)
+        # STRICT: if reference mass exists, candidate MUST have mass to be considered
+        if cand_mass is None:
+            return False
+
+        return abs(cand_mass - float(ref_mass)) <= float(self.mass_tolerance)
+
 
     def set_shared_resources(
         self,
