@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import pandas as pd
 
-from GEPC.steps.step2_chebi.supplementary import (
+from ChemEquiv.steps.step2_chebi.supplementary import (
     parse_chebi_list,
     sort_chebi_ids,
 )

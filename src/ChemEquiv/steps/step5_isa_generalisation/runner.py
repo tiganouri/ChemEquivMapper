@@ -9,11 +9,11 @@ from collections import deque
 import pandas as pd
 import pronto
 
-from GEPC.context import PipelineContext
-from GEPC.resources import ChebiResourceConfig, resolve_chebi_obo
-from GEPC.resources import ReactomeTXTConfig, KEGGTSVConfig  # KEGG cfg unused but ctx loader expects it
+from ChemEquiv.context import PipelineContext
+from ChemEquiv.resources import ChebiResourceConfig, resolve_chebi_obo
+from ChemEquiv.resources import ReactomeTXTConfig, KEGGTSVConfig  # KEGG cfg unused but ctx loader expects it
 
-from GEPC.steps.step2_chebi.supplementary import parse_chebi_list, sort_chebi_ids
+from ChemEquiv.steps.step2_chebi.supplementary import parse_chebi_list, sort_chebi_ids
 from .schema import Step5Schema
 
 logger = logging.getLogger(__name__)

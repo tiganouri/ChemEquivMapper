@@ -9,12 +9,12 @@ from typing import Dict, List, Optional, Sequence, Set, Tuple
 import pronto
 import pandas as pd
 
-from GEPC.context import PipelineContext
-from GEPC.resources import ChebiResourceConfig, resolve_chebi_obo
-from GEPC.resources import ReactomeTXTConfig, KEGGTSVConfig
+from ChemEquiv.context import PipelineContext
+from ChemEquiv.resources import ChebiResourceConfig, resolve_chebi_obo
+from ChemEquiv.resources import ReactomeTXTConfig, KEGGTSVConfig
 
-from GEPC.steps.step2_chebi.kegg_map import get_chebi_to_kegg_map
-from GEPC.steps.step2_chebi.supplementary import (
+from ChemEquiv.steps.step2_chebi.kegg_map import get_chebi_to_kegg_map
+from ChemEquiv.steps.step2_chebi.supplementary import (
     parse_chebi_list,
     parse_kegg_list,
     sort_chebi_ids,

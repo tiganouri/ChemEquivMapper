@@ -36,7 +36,7 @@ class KEGGTSVConfig:
     cache_tsv_path: Optional[Path] = None
 
     # bundled default path inside package
-    package_name: str = "GEPC"
+    package_name: str = "ChemEquiv"
     bundled_rel_path: str = "data/kegg/kegg_compound_to_pathway.tsv"
 
     # download tuning (KEGG REST)

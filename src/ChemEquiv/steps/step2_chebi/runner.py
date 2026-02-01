@@ -19,8 +19,8 @@ from .supplementary import (
     sort_kegg_ids,
 )
 
-from GEPC.context import PipelineContext
-from GEPC.resources import (
+from ChemEquiv.context import PipelineContext
+from ChemEquiv.resources import (
     ReactomeTXTConfig,
     KEGGTSVConfig,
     ChebiResourceConfig,

@@ -20,7 +20,7 @@ class ChebiResourceConfig:
     ChEBI OBO resolution strategy.
 
     Default:
-      - source="bundled" -> use packaged src/GEPC/data/chebi/chebi.obo.gz
+      - source="bundled" -> use packaged src/ChemEquiv/data/chebi/chebi.obo.gz
       - source="download" -> download_url -> cache -> fallback bundled
       - source="local" -> local_obo_gz_path -> fallback bundled
     """
@@ -36,7 +36,7 @@ class ChebiResourceConfig:
     cache_obo_gz_path: Optional[Path] = None
 
     # bundled path inside package
-    package_name: str = "GEPC"
+    package_name: str = "ChemEquiv"
     bundled_rel_path: str = "data/chebi/chebi.obo.gz"
 
     timeout_s: int = 120

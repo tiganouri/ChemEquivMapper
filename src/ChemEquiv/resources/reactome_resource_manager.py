@@ -36,7 +36,7 @@ class ReactomeTXTConfig:
     cache_txt_path: Optional[Path] = None
 
     # bundled default path inside package
-    package_name: str = "GEPC"
+    package_name: str = "ChemEquiv"
     bundled_rel_path: str = "data/reactome/ChEBI2Reactome_All_Levels.txt"
 
     timeout_s: int = 60
