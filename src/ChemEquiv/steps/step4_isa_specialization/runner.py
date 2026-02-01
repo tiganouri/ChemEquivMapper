@@ -110,6 +110,98 @@ class Step4IsASpecialization:
     _chebi_to_kegg: Optional[Dict[str, Set[str]]] = field(default=None, init=False)
     _equiv_cache: Dict[str, Set[str]] = field(default_factory=dict, init=False)
 
+    # --- mass filtering ---
+    mass_col: str = "Exact mass"
+    mass_tolerance: float = 20.0
+
+    _mass_cache: Dict[str, Optional[float]] = field(default_factory=dict, init=False)
+
+    def _parse_float(self, x) -> Optional[float]:
+        if x is None:
+            return None
+        try:
+            if isinstance(x, str):
+                x = x.strip()
+                if not x:
+                    return None
+            v = float(x)
+            if v != v:  # NaN check
+                return None
+            return v
+        except Exception:
+            return None
+
+    def _get_chebi_mass(self, chebi_id: str, *, ctx: Optional[PipelineContext] = None) -> Optional[float]:
+        chebi_id = str(chebi_id).strip().upper()
+        if not chebi_id.startswith("CHEBI:"):
+            return None
+
+        if chebi_id in self._mass_cache:
+            return self._mass_cache[chebi_id]
+
+        self._ensure_ontology_and_maps(ctx=ctx)
+        assert self._onto is not None
+
+        term = _get_term(self._onto, chebi_id)
+        if term is None:
+            self._mass_cache[chebi_id] = None
+            return None
+
+        mass_val: Optional[float] = None
+        try:
+            for ann in getattr(term, "annotations", []):
+                prop = getattr(ann, "property", "")
+                if prop and "chebi/mass" in str(prop):
+                    lit = getattr(ann, "literal", None)
+                    mass_val = self._parse_float(lit)
+                    if mass_val is not None:
+                        break
+        except Exception:
+            mass_val = None
+
+        self._mass_cache[chebi_id] = mass_val
+        return mass_val
+
+    def _get_row_reference_mass(
+        self,
+        df: pd.DataFrame,
+        idx,
+        step3_chebis: Set[str],
+        *,
+        ctx: Optional[PipelineContext] = None,
+    ) -> Optional[float]:
+        # 1) prefer Exact mass column if present/parseable
+        if self.mass_col in df.columns:
+            m = self._parse_float(df.at[idx, self.mass_col])
+            if m is not None:
+                return m
+
+        # 2) fallback: use first available ontology mass from step3 chebis
+        for cid in sort_chebi_ids(step3_chebis):
+            m = self._get_chebi_mass(cid, ctx=ctx)
+            if m is not None:
+                return m
+
+        return None
+
+    def _within_mass_tolerance(
+        self,
+        ref_mass: Optional[float],
+        candidate_chebi: str,
+        *,
+        ctx: Optional[PipelineContext] = None,
+    ) -> bool:
+        # No reference mass => do not filter (preserve old behavior)
+        if ref_mass is None:
+            return True
+
+        cand_mass = self._get_chebi_mass(candidate_chebi, ctx=ctx)
+        if cand_mass is None:
+            # lenient default (same rationale as Step3): keep if candidate mass missing
+            return True
+
+        return abs(cand_mass - float(ref_mass)) <= float(self.mass_tolerance)
+
     def set_shared_resources(
         self,
         *,
@@ -174,12 +266,12 @@ class Step4IsASpecialization:
         self._rel_objs = rel_objs
 
     # RO equivalence closure
-    def _equivalence_closure_single(self, chebi_id: str, *, ctx: Optional[PipelineContext] = None) -> Set[str]:
+    def _equivalence_closure_single(self, chebi_id: str, *, ref_mass: Optional[float] = None, ctx: Optional[PipelineContext] = None) -> Set[str]:
         chebi_id = str(chebi_id).strip().upper()
         if not chebi_id.startswith("CHEBI:"):
             return set()
 
-        if chebi_id in self._equiv_cache:
+        if ref_mass is None and chebi_id in self._equiv_cache:
             return set(self._equiv_cache[chebi_id])
 
         self._ensure_rel_objs(ctx=ctx)
@@ -187,9 +279,12 @@ class Step4IsASpecialization:
         assert self._rel_objs is not None
 
         start = _get_term(self._onto, chebi_id)
+
         if start is None:
-            self._equiv_cache[chebi_id] = set()
+            if ref_mass is None:
+                self._equiv_cache[chebi_id] = set()
             return set()
+
 
         visited: Set[pronto.Term] = {start}
         q: deque[Tuple[pronto.Term, int]] = deque([(start, 0)])
@@ -209,15 +304,20 @@ class Step4IsASpecialization:
         for t in visited:
             tid = getattr(t, "id", None)
             if isinstance(tid, str) and tid.startswith("CHEBI:") and tid != chebi_id:
-                out.add(tid)
+                if self._within_mass_tolerance(ref_mass, tid, ctx=ctx):
+                    out.add(tid)
 
-        self._equiv_cache[chebi_id] = set(out)
+        # only cache when no mass-filtering is active
+        if ref_mass is None:
+            self._equiv_cache[chebi_id] = set(out)
+
         return out
 
-    def _expand_ro_equivalents(self, chebi_ids: Set[str], *, ctx: Optional[PipelineContext] = None) -> Set[str]:
+
+    def _expand_ro_equivalents(self, chebi_ids: Set[str], *, ref_mass: Optional[float] = None, ctx: Optional[PipelineContext] = None) -> Set[str]:
         all_eq: Set[str] = set()
         for cid in chebi_ids:
-            all_eq |= self._equivalence_closure_single(cid, ctx=ctx)
+            all_eq |= self._equivalence_closure_single(cid, ref_mass=ref_mass, ctx=ctx)
         return all_eq
 
     def _map_chebi_to_kegg(self, chebi_ids: Set[str], *, ctx: Optional[PipelineContext] = None) -> Set[str]:
@@ -267,6 +367,8 @@ class Step4IsASpecialization:
             if not step3_chebis:
                 continue
 
+            ref_mass = self._get_row_reference_mass(df_out, idx, step3_chebis, ctx=ctx)
+
             # 1) is_a children
             isa_children = get_is_a_children_for_ids(
                 chebi_ids=step3_chebis,
@@ -275,7 +377,10 @@ class Step4IsASpecialization:
             )
 
             # 2) RO expansion on children
-            isa_children_equiv = self._expand_ro_equivalents(isa_children, ctx=ctx) if isa_children else set()
+            isa_children_equiv = (
+                self._expand_ro_equivalents(isa_children, ref_mass=ref_mass, ctx=ctx)
+                if isa_children else set()
+            )
 
             # 3) new specialized chebis (exclude already present)
             isa_specific = (isa_children | isa_children_equiv) - step3_chebis

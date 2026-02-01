@@ -108,6 +108,109 @@ class Step3RO:
     _chebi_to_kegg: Optional[Dict[str, Set[str]]] = field(default=None, init=False)
     _equiv_cache: Dict[str, Set[str]] = field(default_factory=dict, init=False)
 
+    # --- mass filtering ---
+    mass_col: str = "Exact mass"
+    mass_tolerance: float = 20.0
+
+    _mass_cache: Dict[str, Optional[float]] = field(default_factory=dict, init=False)
+
+    def _parse_float(self, x) -> Optional[float]:
+        if x is None:
+            return None
+        try:
+            if isinstance(x, str):
+                x = x.strip()
+                if not x:
+                    return None
+            v = float(x)
+            # guard against NaN
+            if v != v:
+                return None
+            return v
+        except Exception:
+            return None
+
+    def _get_chebi_mass(self, chebi_id: str, *, ctx: Optional[PipelineContext] = None) -> Optional[float]:
+        """
+        Read the ChEBI mass from ontology annotations, cached per CHEBI ID.
+        Looks for an annotation property containing 'chebi/mass'.
+        """
+        chebi_id = str(chebi_id).strip().upper()
+        if not chebi_id.startswith("CHEBI:"):
+            return None
+
+        if chebi_id in self._mass_cache:
+            return self._mass_cache[chebi_id]
+
+        self._ensure_ontology(ctx=ctx)
+        assert self._onto is not None
+
+        term = _get_term(self._onto, chebi_id)
+        if term is None:
+            self._mass_cache[chebi_id] = None
+            return None
+
+        mass_val: Optional[float] = None
+        try:
+            # Your suggested pattern, but made robust
+            for ann in getattr(term, "annotations", []):
+                prop = getattr(ann, "property", "")
+                if prop and "chebi/mass" in str(prop):
+                    lit = getattr(ann, "literal", None)
+                    mass_val = self._parse_float(lit)
+                    if mass_val is not None:
+                        break
+        except Exception:
+            mass_val = None
+
+        self._mass_cache[chebi_id] = mass_val
+        return mass_val
+
+    def _get_row_reference_mass(
+        self,
+        df: pd.DataFrame,
+        idx,
+        step2_chebis: Set[str],
+        *,
+        ctx: Optional[PipelineContext] = None,
+    ) -> Optional[float]:
+        """
+        Priority:
+          1) df[mass_col] if exists and parseable
+          2) else first available chebi term mass from step2_chebis
+        """
+        if self.mass_col in df.columns:
+            m = self._parse_float(df.at[idx, self.mass_col])
+            if m is not None:
+                return m
+
+        # fallback: use any available mass from the step2 chebis
+        for cid in sort_chebi_ids(step2_chebis):
+            m = self._get_chebi_mass(cid, ctx=ctx)
+            if m is not None:
+                return m
+
+        return None
+
+    def _within_mass_tolerance(
+        self,
+        ref_mass: Optional[float],
+        candidate_chebi: str,
+        *,
+        ctx: Optional[PipelineContext] = None,
+    ) -> bool:
+        if ref_mass is None:
+            # If no reference mass exists, do NOT filter (keeps old behavior)
+            return True
+
+        cand_mass = self._get_chebi_mass(candidate_chebi, ctx=ctx)
+        if cand_mass is None:
+            # if we can't get candidate mass, safest minimal-change behavior:
+            # keep it (or flip to False if you prefer strict filtering)
+            return True
+
+        return abs(cand_mass - ref_mass) <= float(self.mass_tolerance)
+
     def set_shared_resources(
         self,
         *,
@@ -176,12 +279,12 @@ class Step3RO:
             raise RuntimeError("Step3: No RO equivalence relationships resolved.")
         self._rel_objs = rel_objs
 
-    def _equivalence_closure_single(self, chebi_id: str, *, ctx: Optional[PipelineContext] = None) -> Set[str]:
+    def _equivalence_closure_single(self, chebi_id: str, *, ref_mass: Optional[float] = None, ctx: Optional[PipelineContext] = None) -> Set[str]:
         chebi_id = str(chebi_id).strip().upper()
         if not chebi_id.startswith("CHEBI:"):
             return set()
 
-        if chebi_id in self._equiv_cache:
+        if ref_mass is None and chebi_id in self._equiv_cache:
             return set(self._equiv_cache[chebi_id])
 
         self._ensure_rel_objs(ctx=ctx)
@@ -189,9 +292,12 @@ class Step3RO:
         assert self._rel_objs is not None
 
         start = _get_term(self._onto, chebi_id)
+        
         if start is None:
-            self._equiv_cache[chebi_id] = set()
+            if ref_mass is None:
+                self._equiv_cache[chebi_id] = set()
             return set()
+
 
         visited: Set[pronto.Term] = {start}
         q: deque[Tuple[pronto.Term, int]] = deque([(start, 0)])
@@ -211,16 +317,19 @@ class Step3RO:
         for t in visited:
             tid = getattr(t, "id", None)
             if isinstance(tid, str) and tid.startswith("CHEBI:") and tid != chebi_id:
-                out.add(tid)
+                if self._within_mass_tolerance(ref_mass, tid, ctx=ctx):
+                    out.add(tid)
 
-        self._equiv_cache[chebi_id] = set(out)
+        if ref_mass is None:
+            self._equiv_cache[chebi_id] = set(out)
         return out
 
-    def _expand_ro_equivalents(self, chebi_ids: Set[str], *, ctx: Optional[PipelineContext] = None) -> Set[str]:
+    def _expand_ro_equivalents(self, chebi_ids: Set[str], *, ref_mass: Optional[float] = None, ctx: Optional[PipelineContext] = None) -> Set[str]:
         all_eq: Set[str] = set()
         for cid in chebi_ids:
-            all_eq |= self._equivalence_closure_single(cid, ctx=ctx)
+            all_eq |= self._equivalence_closure_single(cid, ref_mass=ref_mass, ctx=ctx)
         return all_eq - chebi_ids
+
 
     def _map_chebi_to_kegg(self, chebi_ids: Set[str], *, ctx: Optional[PipelineContext] = None) -> Set[str]:
         self._ensure_ontology(ctx=ctx)
@@ -273,7 +382,10 @@ class Step3RO:
                 else set()
             )
 
-            ro_eq = self._expand_ro_equivalents(step2_chebis, ctx=ctx) if step2_chebis else set()
+            ref_mass = self._get_row_reference_mass(df_out, idx, step2_chebis, ctx=ctx)
+
+            ro_eq = self._expand_ro_equivalents(step2_chebis, ref_mass=ref_mass, ctx=ctx) if step2_chebis else set()
+
             step3_chebis = step2_chebis | ro_eq
 
             df_out.at[idx, "CHEBI_RO_Equivalents"] = ",".join(sort_chebi_ids(ro_eq)) if ro_eq else ""
