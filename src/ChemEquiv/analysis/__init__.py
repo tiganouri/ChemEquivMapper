@@ -1,5 +1,5 @@
 """
-GEPC.analysis
+ChemEquiv.analysis
 
 
 Analysis subpackage:

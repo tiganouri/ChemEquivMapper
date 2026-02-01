@@ -16,7 +16,7 @@ from typing import Dict, List, Optional, Sequence, Set, Tuple, Literal
 
 import pandas as pd
 
-from GEPC.context import PipelineContext
+from ChemEquiv.context import PipelineContext
 from .stats import fisher_exact_right_tail, fdr_bh, metabolite_sig_map
 
 
