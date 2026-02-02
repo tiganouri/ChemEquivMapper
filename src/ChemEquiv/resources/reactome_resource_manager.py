@@ -27,7 +27,7 @@ class ReactomeTXTConfig:
     source: ReactomeSource = "download"
 
     # It downloads reactome's current version, which is the latest as this package is written 
-    download_url: str = "https://reactome.org/download/current/ChEBI2Reactome_All_Levels.txt"
+    download_url: str = "https://reactome.org/download/current/ChEBI2Reactome.txt" #https://reactome.org/download/current/ChEBI2Reactome_All_Levels.txt" to access all the levels 
 
     # local option
     local_txt_path: Optional[Path] = None
@@ -37,7 +37,7 @@ class ReactomeTXTConfig:
 
     # bundled default path inside package
     package_name: str = "ChemEquiv"
-    bundled_rel_path: str = "data/reactome/ChEBI2Reactome_All_Levels.txt"
+    bundled_rel_path: str = "data/reactome/ChEBI2Reactome.txt"    #data/reactome/ChEBI2Reactome_All_Levels.txt to access all the levels 
 
     timeout_s: int = 60
 
