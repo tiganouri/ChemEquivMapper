@@ -2,28 +2,55 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List, Optional, Sequence, Tuple, Any
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
+import numpy as np
 import pandas as pd
+from sklearn.decomposition import PCA
 from sklearn.impute import KNNImputer
+
+# Matplotlib is only needed if you enable plotting
+import matplotlib.pyplot as plt
 
 
 @dataclass
 class DatasetPreprocessConfig:
-    max_missing_frac: float = 0.50          # 50% rule
-    min_present_frac: float = 0.50          # keep if ANY group has >= this present
+    # filtering / imputation
+    max_missing_frac: float = 0.50          # 50% rule (groupwise; keep if ANY group passes)
+    min_present_frac: float = 0.50          # (currently not used; kept for backwards compatibility)
     drop_blanks: bool = True
     knn_k: int = 5
     knn_weights: str = "distance"
-    
+
     na_group_label: str = "NA"              # assign missing group labels to this
-    
+
     fallback_divisor: float = 1000.0        # fill NaNs with (row_min / fallback_divisor)
     fallback_when_knn_fails: bool = True    # run fallback if KNN throws
     fallback_when_nans_remain: bool = True  # run fallback if KNN completes but NaNs remain
 
+    # log transform (disabled by default; set to "log2" or "log10" to enable)
+    log_transform: Optional[str] = None     # {"log2", "log10", None}
+    log_pseudocount: float = 1.0            # added before log to avoid log(0)
+
+    # PCA plot controls (plots are optional and can also be controlled per-call)
+    pca_n_components: int = 2
+    plot_dpi: int = 300
+
 
 class DatasetPreprocessor:
+    """
+    Feature-table preprocessing:
+      - read tables
+      - normalize metadata (sample_id, group)
+      - drop blanks (optional)
+      - align/subset samples by groups_of_interest
+      - groupwise missingness filtering (keep if ANY group passes max_missing_frac)
+      - numeric coercion
+      - KNN imputation (+ fallback)
+      - optional log transform (log2/log10)
+      - optional PCA plots (raw, transformed, or side-by-side)
+    """
+
     def __init__(self, cfg: DatasetPreprocessConfig = DatasetPreprocessConfig()):
         self.cfg = cfg
 
@@ -80,10 +107,10 @@ class DatasetPreprocessor:
             # normalize group strings, fill missing with NA label
             meta["group"] = (
                 meta["group"]
-                .astype(str)
                 .where(~meta["group"].isna(), other=self.cfg.na_group_label)
+                .astype(str)
+                .str.strip()
             )
-            meta["group"] = meta["group"].astype(str).str.strip()
             # treat empty/whitespace as NA group too
             meta.loc[meta["group"].str.strip().eq(""), "group"] = self.cfg.na_group_label
         else:
@@ -157,6 +184,43 @@ class DatasetPreprocessor:
         return out
 
     # ----------------------------
+    # log transform (optional)
+    # ----------------------------
+    def apply_log_transform(
+        self,
+        df: pd.DataFrame,
+        feature_col: str,
+        transform: Optional[str],
+        *,
+        pseudocount: Optional[float] = None,
+    ) -> pd.DataFrame:
+        """
+        Apply log2 or log10 transform to numeric values.
+        Uses pseudocount to avoid log(0).
+        """
+        if transform is None:
+            return df.copy()
+
+        if transform not in {"log2", "log10"}:
+            raise ValueError("log_transform must be one of {None, 'log2', 'log10'}")
+
+        if pseudocount is None:
+            pseudocount = float(self.cfg.log_pseudocount)
+
+        df = df.copy()
+        sample_cols = [c for c in df.columns if c != feature_col]
+
+        X = df[sample_cols].astype(float) + float(pseudocount)
+
+        if transform == "log2":
+            X = np.log2(X)
+        else:  # log10
+            X = np.log10(X)
+
+        df[sample_cols] = X
+        return df
+
+    # ----------------------------
     # groupwise missing filter
     # ----------------------------
     def drop_rows_by_missing_fraction_groupwise(
@@ -168,8 +232,7 @@ class DatasetPreprocessor:
         max_missing_frac: Optional[float] = None,
     ) -> Tuple[pd.DataFrame, Dict[str, Any]]:
         """
-        Keep a feature if at least one group has present fraction >= min_present_frac.
-        Equivalent: keep if exists group with missing_frac <= max_missing_frac (default 0.50).
+        Keep a feature if ANY group has missing_frac <= max_missing_frac (default cfg.max_missing_frac).
 
         Missing defined as:
           - NaN after numeric coercion
@@ -194,35 +257,27 @@ class DatasetPreprocessor:
             add = pd.DataFrame({"group": self.cfg.na_group_label}, index=missing_in_meta)
             meta = pd.concat([meta, add], axis=0)
 
-        # group labels 
         groups = meta["group"].astype(str).fillna(self.cfg.na_group_label)
         groups = groups.where(~groups.str.strip().eq(""), other=self.cfg.na_group_label)
 
         X_raw = df[sample_cols]
-
         empty_mask = X_raw.astype(str).apply(lambda s: s.str.strip().eq("")).fillna(False)
         X_num = X_raw.apply(pd.to_numeric, errors="coerce")
         nan_mask = X_num.isna()
-        missing_mask = nan_mask | empty_mask  # features x samples boolean
+        missing_mask = nan_mask | empty_mask
 
-        # compute per-group missing fractions
         group_levels = list(pd.unique(groups))
         per_group_missing: Dict[str, pd.Series] = {}
-        per_group_present: Dict[str, pd.Series] = {}
 
         for g in group_levels:
             cols_g = groups.index[groups == g].tolist()
             if not cols_g:
                 continue
             miss_frac_g = missing_mask[cols_g].mean(axis=1)
-            pres_frac_g = 1.0 - miss_frac_g
             per_group_missing[str(g)] = miss_frac_g
-            per_group_present[str(g)] = pres_frac_g
 
-        # keep if ANY group passes the threshold
-        # i.e. exists g with missing_frac <= max_missing_frac
         keep = pd.Series(False, index=df.index)
-        for g, miss_frac_g in per_group_missing.items():
+        for _, miss_frac_g in per_group_missing.items():
             keep = keep | (miss_frac_g <= float(max_missing_frac))
 
         out = df.loc[keep].copy()
@@ -238,33 +293,27 @@ class DatasetPreprocessor:
             "per_group_mean_missing_frac": {g: float(s.mean()) for g, s in per_group_missing.items()},
             "per_group_median_missing_frac": {g: float(s.median()) for g, s in per_group_missing.items()},
         }
-        
         return out, report
-        
+
     def _fallback_impute_min_over_divisor(self, df: pd.DataFrame, feature_col: str) -> pd.DataFrame:
         """
         Fill NaNs per feature(row) with (min_non_missing / divisor).
-        If a row has no non-missing values (should be rare after filtering), fill with 0.
+        If a row has no non-missing values, fill with 0.
         """
         df = df.copy()
         sample_cols = [c for c in df.columns if c != feature_col]
 
-        X = df[sample_cols].apply(pd.to_numeric, errors="coerce")  # features x samples
-
+        X = df[sample_cols].apply(pd.to_numeric, errors="coerce")
         row_min = X.min(axis=1, skipna=True)
-        fill_vals = row_min / float(self.cfg.fallback_divisor)
-
-        # if row_min is NaN (all missing), fallback to 0
-        fill_vals = fill_vals.fillna(0.0)
+        fill_vals = (row_min / float(self.cfg.fallback_divisor)).fillna(0.0)
 
         X_filled = X.copy()
         nan_mask = X_filled.isna()
-        # broadcast per-row fill values
         X_filled = X_filled.where(~nan_mask, other=np.expand_dims(fill_vals.values, axis=1))
 
         df[sample_cols] = X_filled
         return df
-        
+
     def knn_impute_feature_table(
         self,
         df: pd.DataFrame,
@@ -281,28 +330,111 @@ class DatasetPreprocessor:
         df = df.copy()
         sample_cols = [c for c in df.columns if c != feature_col]
 
-        X = df[sample_cols].apply(pd.to_numeric, errors="coerce")   # features x samples
-        X_t = X.T                                                   # samples x features
+        X = df[sample_cols].apply(pd.to_numeric, errors="coerce")  # features x samples
+        X_t = X.T                                                  # samples x features
 
         try:
             imputer = KNNImputer(n_neighbors=int(k), weights=str(weights))
             X_imp_t = pd.DataFrame(imputer.fit_transform(X_t), index=X_t.index, columns=X_t.columns)
             df[sample_cols] = X_imp_t.T
 
-            if self.cfg.fallback_when_nans_remain:
-                if pd.isna(df[sample_cols]).to_numpy().any():
-                    df = self._fallback_impute_min_over_divisor(df, feature_col)
+            if self.cfg.fallback_when_nans_remain and pd.isna(df[sample_cols]).to_numpy().any():
+                df = self._fallback_impute_min_over_divisor(df, feature_col)
 
             return df
 
         except Exception:
             if not self.cfg.fallback_when_knn_fails:
                 raise
-            # fallback if KNN fails
-            df[sample_cols] = X  # ensure numeric-coerced
+            df[sample_cols] = X
             df = self._fallback_impute_min_over_divisor(df, feature_col)
             return df
 
+    # ----------------------------
+    # PCA plotting (optional)
+    # ----------------------------
+    def _plot_pca_on_axis(
+        self,
+        ax: plt.Axes,
+        df: pd.DataFrame,
+        meta_indexed: pd.DataFrame,
+        feature_col: str,
+        *,
+        title: str,
+    ) -> None:
+        X = df.drop(columns=[feature_col]).T  # samples x features
+        pca = PCA(n_components=int(self.cfg.pca_n_components))
+        scores = pca.fit_transform(X)
+
+        groups = meta_indexed.loc[X.index, "group"]
+        for g in groups.unique():
+            idx = (groups == g).to_numpy()
+            ax.scatter(scores[idx, 0], scores[idx, 1], label=str(g), alpha=0.8)
+
+        ax.set_title(title)
+        ax.set_xlabel("PC1")
+        ax.set_ylabel("PC2")
+        ax.legend()
+
+    def save_pca_plot(
+        self,
+        *,
+        df_raw: pd.DataFrame,
+        df_log: Optional[pd.DataFrame],
+        meta: pd.DataFrame,
+        feature_col: str,
+        ds_name: str,
+        outpath: Path,
+        plot_mode: str,
+        log_transform: Optional[str],
+    ) -> None:
+        """
+        plot_mode:
+          - "none"    : do nothing
+          - "raw"     : single PCA on raw
+          - "log"     : single PCA on transformed (requires log_transform != None)
+          - "compare" : side-by-side raw vs transformed (requires log_transform != None)
+        """
+        mode = str(plot_mode).lower().strip()
+        if mode == "none":
+            return
+
+        if mode in {"log", "compare"} and log_transform is None:
+            raise ValueError(f"plot_mode='{plot_mode}' requires log_transform to be set (log2/log10).")
+
+        outpath.parent.mkdir(parents=True, exist_ok=True)
+
+        if mode == "raw":
+            fig, ax = plt.subplots(1, 1, figsize=(6, 5))
+            self._plot_pca_on_axis(ax, df_raw, meta, feature_col, title="Raw")
+            fig.suptitle(f"{ds_name} PCA")
+            fig.tight_layout()
+            fig.savefig(outpath, dpi=int(self.cfg.plot_dpi))
+            plt.close(fig)
+            return
+
+        if mode == "log":
+            assert df_log is not None
+            fig, ax = plt.subplots(1, 1, figsize=(6, 5))
+            self._plot_pca_on_axis(ax, df_log, meta, feature_col, title=f"{log_transform}")
+            fig.suptitle(f"{ds_name} PCA")
+            fig.tight_layout()
+            fig.savefig(outpath, dpi=int(self.cfg.plot_dpi))
+            plt.close(fig)
+            return
+
+        if mode == "compare":
+            assert df_log is not None
+            fig, axes = plt.subplots(1, 2, figsize=(12, 5), sharex=True, sharey=True)
+            self._plot_pca_on_axis(axes[0], df_raw, meta, feature_col, title="Raw")
+            self._plot_pca_on_axis(axes[1], df_log, meta, feature_col, title=f"{log_transform}")
+            fig.suptitle(f"{ds_name} PCA (raw vs {log_transform})")
+            fig.tight_layout()
+            fig.savefig(outpath, dpi=int(self.cfg.plot_dpi))
+            plt.close(fig)
+            return
+
+        raise ValueError("plot_mode must be one of {'none','raw','log','compare'}")
 
     # ----------------------------
     # main builder
@@ -313,8 +445,19 @@ class DatasetPreprocessor:
         group_paths: Dict[str, Path],
         ds_to_meta: Dict[str, str],
         groups_of_interest: Dict[str, Sequence[str]],
+        *,
+        # Per-call overrides (so you can enable/disable without mutating cfg)
+        log_transform: Optional[str] = None,          # None => use cfg.log_transform
+        plot_mode: str = "none",                      # "none"|"raw"|"log"|"compare"
+        plot_outdir: Optional[Path] = None,           # required if plot_mode != "none"
+        plot_filename_suffix: str = "",               # optional
     ) -> Dict[str, Dict[str, Any]]:
         datasets: Dict[str, Dict[str, Any]] = {}
+
+        # resolve transform for this call
+        effective_log = self.cfg.log_transform if log_transform is None else log_transform
+        if effective_log not in {None, "log2", "log10"}:
+            raise ValueError("log_transform must be one of {None, 'log2', 'log10'}")
 
         for ds_name, ds_path in ds_paths.items():
             meta_key = ds_to_meta[ds_name]
@@ -326,7 +469,6 @@ class DatasetPreprocessor:
 
             feature_col = raw_df.columns[0]
 
-            # optional: drop blanks
             blanks: List[str] = []
             df1 = raw_df
             if self.cfg.drop_blanks:
@@ -335,14 +477,36 @@ class DatasetPreprocessor:
             # align + subset first (needed for groupwise filter)
             df2, meta2, rep_align = self.align_and_subset_by_groups(df1, raw_meta, groups_keep, feature_col=feature_col)
 
-            # groupwise drop sparse rows (>50% missing within all groups; keep if any group passes)
+            # groupwise drop sparse rows
             df3, rep_sparse = self.drop_rows_by_missing_fraction_groupwise(df2, feature_col, meta2)
 
-            # numeric
+            # numeric + impute
             df3 = self.to_numeric_matrix(df3, feature_col)
-
-            # KNN impute remaining missing values
             df3 = self.knn_impute_feature_table(df3, feature_col)
+
+            df_raw = df3.copy()
+            df_log = self.apply_log_transform(df_raw, feature_col, transform=effective_log)
+
+            # optional plotting
+            if str(plot_mode).lower().strip() != "none":
+                if plot_outdir is None:
+                    raise ValueError("plot_outdir must be provided when plot_mode != 'none'.")
+
+                suffix = f"_{plot_filename_suffix}" if plot_filename_suffix else ""
+                outpath = Path(plot_outdir) / f"PCA_{ds_name}{suffix}.png"
+
+                # if no transform configured, df_log is still a copy of df_raw
+                # but we enforce semantic correctness: requesting log/compare requires effective_log != None
+                self.save_pca_plot(
+                    df_raw=df_raw,
+                    df_log=(df_log if effective_log is not None else None),
+                    meta=meta2,
+                    feature_col=feature_col,
+                    ds_name=ds_name,
+                    outpath=outpath,
+                    plot_mode=plot_mode,
+                    log_transform=effective_log,
+                )
 
             datasets[ds_name] = {
                 "paths": {"data": ds_path, "meta": meta_path, "meta_key": meta_key},
@@ -350,8 +514,10 @@ class DatasetPreprocessor:
                 "feature_col": feature_col,
                 "raw_df": raw_df,
                 "raw_meta": raw_meta,
-                "df": df3,
+                "df_raw": df_raw,
+                "df_log": (df_log if effective_log is not None else None),
                 "meta": meta2,
+                "log_transform": effective_log,
                 "report_align": rep_align,
                 "report_blanks": {"dropped_blank_cols": blanks, "n_dropped": len(blanks)},
                 "report_sparse_rows": rep_sparse,
