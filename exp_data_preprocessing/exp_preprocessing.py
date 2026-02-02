@@ -425,7 +425,7 @@ class DatasetPreprocessor:
 
         if mode == "compare":
             assert df_log is not None
-            fig, axes = plt.subplots(1, 2, figsize=(12, 5), sharex=True, sharey=True)
+            fig, axes = plt.subplots(1, 2, figsize=(12, 5))
             self._plot_pca_on_axis(axes[0], df_raw, meta, feature_col, title="Raw")
             self._plot_pca_on_axis(axes[1], df_log, meta, feature_col, title=f"{log_transform}")
             fig.suptitle(f"{ds_name} PCA (raw vs {log_transform})")
