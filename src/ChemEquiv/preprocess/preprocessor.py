@@ -197,7 +197,9 @@ class Preprocessor:
         sample_meta: pd.DataFrame,
         *,
         group_col: str,
+        metabolite_feature_map: Optional[pd.DataFrame] = None,
     ) -> PreprocessResult:
+        
         # 1) Read + canonicalize + ensure unique feature_id
         reader = InputTablePreprocessor(InputTableConfig(feature_col=self.cfg.feature_col))
         abundance_feature, feature_meta = reader.read(feature_table_path)
@@ -211,9 +213,33 @@ class Preprocessor:
         # metabolite_id := canonicalized name (feature_meta["feature_name"])
         # build mapping: metabolite_id -> list(feature_id)
         metab_to_features: Dict[str, List[str]] = {}
-        for fid, row in feature_meta.iterrows():
-            metab = str(row["feature_name"])
-            metab_to_features.setdefault(metab, []).append(str(row["feature_id"]))
+
+        if metabolite_feature_map is not None:
+            # expected columns: metabolite_id, feature_ids_used (list) OR metabolite_id, feature_id rows
+            m = metabolite_feature_map.copy()
+        
+            if "metabolite_id" not in m.columns:
+                raise ValueError("metabolite_feature_map must contain a 'metabolite_id' column.")
+        
+            if "feature_ids_used" in m.columns:
+                for _, r in m.iterrows():
+                    metab = str(r["metabolite_id"])
+                    fids = r["feature_ids_used"]
+                    if isinstance(fids, str):
+                        # if stored as stringified list, try safe parse fallback
+                        # (optional: you can skip parsing if you guarantee lists)
+                        fids = [fids]
+                    metab_to_features[metab] = [str(x) for x in fids]
+            elif "feature_id" in m.columns:
+                for metab, sub in m.groupby("metabolite_id"):
+                    metab_to_features[str(metab)] = [str(x) for x in sub["feature_id"].tolist()]
+            else:
+                raise ValueError("metabolite_feature_map must contain 'feature_ids_used' OR 'feature_id' column.")
+        else:
+            # fallback to group by feature_name
+            for fid, row in feature_meta.iterrows():
+                metab = str(row["feature_name"])
+                metab_to_features.setdefault(metab, []).append(str(row["feature_id"]))
 
         # 4) Compute scale_report + hybrid p-values
         # Use X = samples x features for stats
