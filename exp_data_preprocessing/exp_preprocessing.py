@@ -484,6 +484,49 @@ class DatasetPreprocessor:
     
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_df.to_csv(out_path, index=False)
+    def make_feature_ids_and_map(
+        self,
+        df: pd.DataFrame,
+        feature_col: str,
+        *,
+        id_sep: str = "__",
+    ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+        """
+        Turn non-unique feature names into unique feature_id and create:
+          - feature_meta: feature_id -> feature_name, row_number
+          - metabolite_feature_map: metabolite_id (=feature_name) -> list(feature_id)
+    
+        Returns:
+          df2: same matrix but first column contains feature_id (unique)
+          feature_meta: indexed by feature_id
+          metabolite_feature_map: metabolite_id -> feature_ids_used
+        """
+        df2 = df.copy()
+        names = df2[feature_col].astype(str).str.strip()
+    
+        # stable per-row occurrence index
+        occ = names.groupby(names).cumcount() + 1
+        feature_ids = names + id_sep + occ.astype(str)
+    
+        df2[feature_col] = feature_ids
+    
+        feature_meta = pd.DataFrame(
+            {
+                "feature_id": feature_ids.values,
+                "feature_name": names.values,
+                "row_number": np.arange(1, len(df2) + 1, dtype=int),
+            }
+        ).set_index("feature_id")
+    
+        metabolite_feature_map = (
+            feature_meta.reset_index()
+            .groupby("feature_name")["feature_id"]
+            .apply(list)
+            .reset_index()
+            .rename(columns={"feature_name": "metabolite_id", "feature_id": "feature_ids_used"})
+        )
+    
+        return df2, feature_meta, metabolite_feature_map
 
     # ----------------------------
     # main builder
@@ -525,6 +568,9 @@ class DatasetPreprocessor:
             # KNN impute remaining missing values
             df3 = self.knn_impute_feature_table(df3, feature_col)
 
+            # make feature_id unique + build maps (for PCA + downstream ORA)
+            df3, feature_meta, metabolite_feature_map = self.make_feature_ids_and_map(df3, feature_col)
+
             # ---- NEW: keep raw + (optional) log ----
             df_raw_clean = df3
             df_log = self.apply_log_transform(df_raw_clean, feature_col)  # None if log_mode == "none"
@@ -542,6 +588,8 @@ class DatasetPreprocessor:
                 "report_blanks": {"dropped_blank_cols": blanks, "n_dropped": len(blanks)},
                 "report_sparse_rows": rep_sparse,
                 "log_cfg": {"log_mode": self.log_cfg.log_mode, "log_offset": self.log_cfg.log_offset},
+                "feature_meta": feature_meta,
+                "metabolite_feature_map" : metabolite_feature_map,
             }
 
             # ---- NEW: PCA compare plot (only if log exists and output dir is set) ----
