@@ -49,7 +49,9 @@ class LogTransformConfig:
     pca_dpi: int = 220
     pca_prefix: str = "PCA_COMPARE"
 
-
+    pca_loadings_out_dir: Optional[Path] = None
+    pca_loadings_prefix: str = "PCA_LOADINGS"
+    
 class DatasetPreprocessor:
     def __init__(
         self,
@@ -435,6 +437,54 @@ class DatasetPreprocessor:
         fig.savefig(out_path, dpi=int(self.log_cfg.pca_dpi), bbox_inches="tight")
         plt.close(fig)
 
+    def save_pca_loadings_csv(
+        self,
+        *,
+        df: pd.DataFrame,
+        feature_col: str,
+        meta: pd.DataFrame,
+        out_path: Path,
+        n_components: Optional[int] = None,
+    ) -> None:
+        """
+        Saves PCA loadings (per metabolite/feature) to CSV.
+    
+        Output columns:
+          feature (metabolite name), PC1..PCk loadings, plus explained variance (%).
+        """
+        if n_components is None:
+            n_components = int(self.log_cfg.pca_n_components)
+    
+        sample_cols = [c for c in df.columns if c != feature_col]
+    
+        # X: samples x features (same orientation as your PCA plotting)
+        X = df[sample_cols].apply(pd.to_numeric, errors="coerce").T
+    
+        # align to metadata sample order (consistent with your PCA plots)
+        meta2 = meta.loc[meta.index.intersection(X.index)].copy()
+        X = X.loc[meta2.index]
+    
+        pca = PCA(n_components=int(n_components))
+        pca.fit(X.to_numpy())
+    
+        # feature names (metabolites) in the SAME order as columns of X
+        feature_names = df[feature_col].astype(str).tolist()
+    
+        # loadings: (n_features, n_components)
+        loadings = pca.components_.T
+    
+        cols = [f"PC{i+1}_loading" for i in range(loadings.shape[1])]
+        out_df = pd.DataFrame(loadings, columns=cols)
+        out_df.insert(0, feature_col, feature_names)
+    
+        # optional: add explained variance info (handy for later visualization labels)
+        evr = pca.explained_variance_ratio_
+        for i, v in enumerate(evr, start=1):
+            out_df[f"PC{i}_explained_var_ratio"] = float(v)
+    
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_df.to_csv(out_path, index=False)
+
     # ----------------------------
     # main builder
     # ----------------------------
@@ -478,7 +528,7 @@ class DatasetPreprocessor:
             # ---- NEW: keep raw + (optional) log ----
             df_raw_clean = df3
             df_log = self.apply_log_transform(df_raw_clean, feature_col)  # None if log_mode == "none"
-
+            
             out: Dict[str, Any] = {
                 "paths": {"data": ds_path, "meta": meta_path, "meta_key": meta_key},
                 "groups_keep": list(groups_keep),
@@ -508,6 +558,27 @@ class DatasetPreprocessor:
                     out_path=out_path,
                 )
                 out["pca_compare_plot"] = str(out_path)
+
+            # ---- NEW: PCA loadings export (optional) ----
+            if self.log_cfg.pca_loadings_out_dir is not None:
+                df_for_pca = df_log if df_log is not None else df_raw_clean
+                which = self.log_cfg.log_mode if df_log is not None else "raw"
+            
+                out_name = (
+                    f"{self.log_cfg.pca_loadings_prefix}_{ds_name}"
+                    f"_groups={'-'.join(sorted(set(groups_keep)))}"
+                    f"_matrix={which}_nPC={self.log_cfg.pca_n_components}.csv"
+                )
+                out_path = Path(self.log_cfg.pca_loadings_out_dir) / out_name
+            
+                self.save_pca_loadings_csv(
+                    df=df_for_pca,
+                    feature_col=feature_col,
+                    meta=meta2,
+                    out_path=out_path,
+                    n_components=self.log_cfg.pca_n_components,
+                )
+                out["pca_loadings_csv"] = str(out_path)
 
             datasets[ds_name] = out
 
