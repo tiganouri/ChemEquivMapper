@@ -52,6 +52,12 @@ class LogTransformConfig:
     pca_loadings_out_dir: Optional[Path] = None
     pca_loadings_prefix: str = "PCA_LOADINGS"
     
+    # Outlier labeling (optional)
+    pca_label_outliers: bool = True
+    pca_outlier_z: float = 3.5          # robust z threshold (common choice)
+    pca_max_outlier_labels: int = 15    # avoid clutter
+    pca_label_fontsize: int = 7
+
 class DatasetPreprocessor:
     def __init__(
         self,
@@ -385,6 +391,17 @@ class DatasetPreprocessor:
         samples = list(meta2.index.astype(str))
         return scores, groups, samples
 
+    def _robust_outlier_mask(self, scores: np.ndarray, z_thresh: float) -> np.ndarray:
+        """
+        Robust outliers in 2D PCA score space using median/MAD-based z-scores.
+        Flags a point if |z| > z_thresh on PC1 or PC2.
+        """
+        eps = 1e-12
+        med = np.median(scores, axis=0)
+        mad = np.median(np.abs(scores - med), axis=0) + eps
+        z = 0.6745 * (scores - med) / mad  # robust z
+        return (np.abs(z) > float(z_thresh)).any(axis=1)
+
     def save_pca_compare_plot(
         self,
         *,
@@ -400,8 +417,8 @@ class DatasetPreprocessor:
           left = raw PCA
           right = log PCA
         """
-        scores_raw, groups_raw, _ = self._pca_scores(df_raw, feature_col, meta)
-        scores_log, groups_log, _ = self._pca_scores(df_log, feature_col, meta)
+        scores_raw, groups_raw, samples_raw  = self._pca_scores(df_raw, feature_col, meta)
+        scores_log, groups_log, samples_log  = self._pca_scores(df_log, feature_col, meta)
 
         # Make sure panels use same group order
         uniq_groups = sorted(set(groups_raw.unique()).union(set(groups_log.unique())))
@@ -417,6 +434,18 @@ class DatasetPreprocessor:
             if m.sum() == 0:
                 continue
             ax.scatter(scores_raw[m, 0], scores_raw[m, 1], label=g)
+        
+        m_out = self._robust_outlier_mask(scores_raw, z_thresh=3.5)
+        out_idx = np.where(m_out)[0]
+        for i in out_idx:
+            ax.annotate(
+                samples_raw[i],
+                (scores_raw[i, 0], scores_raw[i, 1]),
+                textcoords="offset points",
+                xytext=(4, 4),
+                fontsize=7,
+            )
+
         ax.set_xlabel("PC1")
         ax.set_ylabel("PC2")
         ax.legend(loc="best", fontsize=8)
@@ -429,6 +458,18 @@ class DatasetPreprocessor:
             if m.sum() == 0:
                 continue
             ax.scatter(scores_log[m, 0], scores_log[m, 1], label=g)
+        
+        m_out = self._robust_outlier_mask(scores_log, z_thresh=3.5)
+        out_idx = np.where(m_out)[0]
+        for i in out_idx:
+            ax.annotate(
+                samples_log[i],
+                (scores_log[i, 0], scores_log[i, 1]),
+                textcoords="offset points",
+                xytext=(4, 4),
+                fontsize=7,
+            )
+            
         ax.set_xlabel("PC1")
         ax.set_ylabel("PC2")
         ax.legend(loc="best", fontsize=8)
@@ -484,6 +525,7 @@ class DatasetPreprocessor:
     
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_df.to_csv(out_path, index=False)
+
     def make_feature_ids_and_map(
         self,
         df: pd.DataFrame,
