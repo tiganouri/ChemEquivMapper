@@ -52,6 +52,12 @@ class LogTransformConfig:
     pca_loadings_out_dir: Optional[Path] = None
     pca_loadings_prefix: str = "PCA_LOADINGS"
     
+    # Outlier labeling (optional)
+    pca_label_outliers: bool = True
+    pca_outlier_z: float = 3.5          # robust z threshold (common choice)
+    pca_max_outlier_labels: int = 15    # avoid clutter
+    pca_label_fontsize: int = 7
+
 class DatasetPreprocessor:
     def __init__(
         self,
@@ -385,6 +391,17 @@ class DatasetPreprocessor:
         samples = list(meta2.index.astype(str))
         return scores, groups, samples
 
+    def _robust_outlier_mask(self, scores: np.ndarray, z_thresh: float) -> np.ndarray:
+        """
+        Robust outliers in 2D PCA score space using median/MAD-based z-scores.
+        Flags a point if |z| > z_thresh on PC1 or PC2.
+        """
+        eps = 1e-12
+        med = np.median(scores, axis=0)
+        mad = np.median(np.abs(scores - med), axis=0) + eps
+        z = 0.6745 * (scores - med) / mad  # robust z
+        return (np.abs(z) > float(z_thresh)).any(axis=1)
+
     def save_pca_compare_plot(
         self,
         *,
@@ -400,8 +417,8 @@ class DatasetPreprocessor:
           left = raw PCA
           right = log PCA
         """
-        scores_raw, groups_raw, _ = self._pca_scores(df_raw, feature_col, meta)
-        scores_log, groups_log, _ = self._pca_scores(df_log, feature_col, meta)
+        scores_raw, groups_raw, samples_raw  = self._pca_scores(df_raw, feature_col, meta)
+        scores_log, groups_log, samples_log  = self._pca_scores(df_log, feature_col, meta)
 
         # Make sure panels use same group order
         uniq_groups = sorted(set(groups_raw.unique()).union(set(groups_log.unique())))
@@ -417,6 +434,18 @@ class DatasetPreprocessor:
             if m.sum() == 0:
                 continue
             ax.scatter(scores_raw[m, 0], scores_raw[m, 1], label=g)
+        
+        m_out = self._robust_outlier_mask(scores_raw, z_thresh=3.5)
+        out_idx = np.where(m_out)[0]
+        for i in out_idx:
+            ax.annotate(
+                samples_raw[i],
+                (scores_raw[i, 0], scores_raw[i, 1]),
+                textcoords="offset points",
+                xytext=(4, 4),
+                fontsize=7,
+            )
+
         ax.set_xlabel("PC1")
         ax.set_ylabel("PC2")
         ax.legend(loc="best", fontsize=8)
@@ -429,6 +458,18 @@ class DatasetPreprocessor:
             if m.sum() == 0:
                 continue
             ax.scatter(scores_log[m, 0], scores_log[m, 1], label=g)
+        
+        m_out = self._robust_outlier_mask(scores_log, z_thresh=3.5)
+        out_idx = np.where(m_out)[0]
+        for i in out_idx:
+            ax.annotate(
+                samples_log[i],
+                (scores_log[i, 0], scores_log[i, 1]),
+                textcoords="offset points",
+                xytext=(4, 4),
+                fontsize=7,
+            )
+            
         ax.set_xlabel("PC1")
         ax.set_ylabel("PC2")
         ax.legend(loc="best", fontsize=8)
@@ -485,6 +526,50 @@ class DatasetPreprocessor:
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_df.to_csv(out_path, index=False)
 
+    def make_feature_ids_and_map(
+        self,
+        df: pd.DataFrame,
+        feature_col: str,
+        *,
+        id_sep: str = "__",
+    ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+        """
+        Turn non-unique feature names into unique feature_id and create:
+          - feature_meta: feature_id -> feature_name, row_number
+          - metabolite_feature_map: metabolite_id (=feature_name) -> list(feature_id)
+    
+        Returns:
+          df2: same matrix but first column contains feature_id (unique)
+          feature_meta: indexed by feature_id
+          metabolite_feature_map: metabolite_id -> feature_ids_used
+        """
+        df2 = df.copy()
+        names = df2[feature_col].astype(str).str.strip()
+    
+        # stable per-row occurrence index
+        occ = names.groupby(names).cumcount() + 1
+        feature_ids = names + id_sep + occ.astype(str)
+    
+        df2[feature_col] = feature_ids
+    
+        feature_meta = pd.DataFrame(
+            {
+                "feature_id": feature_ids.values,
+                "feature_name": names.values,
+                "row_number": np.arange(1, len(df2) + 1, dtype=int),
+            }
+        ).set_index("feature_id")
+    
+        metabolite_feature_map = (
+            feature_meta.reset_index()
+            .groupby("feature_name")["feature_id"]
+            .apply(list)
+            .reset_index()
+            .rename(columns={"feature_name": "metabolite_id", "feature_id": "feature_ids_used"})
+        )
+    
+        return df2, feature_meta, metabolite_feature_map
+
     # ----------------------------
     # main builder
     # ----------------------------
@@ -525,6 +610,9 @@ class DatasetPreprocessor:
             # KNN impute remaining missing values
             df3 = self.knn_impute_feature_table(df3, feature_col)
 
+            # make feature_id unique + build maps (for PCA + downstream ORA)
+            df3, feature_meta, metabolite_feature_map = self.make_feature_ids_and_map(df3, feature_col)
+
             # ---- NEW: keep raw + (optional) log ----
             df_raw_clean = df3
             df_log = self.apply_log_transform(df_raw_clean, feature_col)  # None if log_mode == "none"
@@ -542,6 +630,8 @@ class DatasetPreprocessor:
                 "report_blanks": {"dropped_blank_cols": blanks, "n_dropped": len(blanks)},
                 "report_sparse_rows": rep_sparse,
                 "log_cfg": {"log_mode": self.log_cfg.log_mode, "log_offset": self.log_cfg.log_offset},
+                "feature_meta": feature_meta,
+                "metabolite_feature_map" : metabolite_feature_map,
             }
 
             # ---- NEW: PCA compare plot (only if log exists and output dir is set) ----
