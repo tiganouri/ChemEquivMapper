@@ -75,7 +75,7 @@ A DataFrame indexed by `feature_id` with:
 
 
 
-### 3) `**metabolite_stats**`
+### 3) `metabolite_stats`
 
 A metabolite-level stats table (metabolite_id is the canonical feature name grouping) including:
 
