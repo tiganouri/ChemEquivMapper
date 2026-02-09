@@ -62,6 +62,36 @@ def _lookup_from_indices(
     all_hits = list(exact_hits) + [x for x in fuzzy_hits if x not in exact_hits]
     return exact_hits, fuzzy_hits, all_hits
 
+def _norm_chebi_token(tok: str) -> str:
+    s = str(tok).strip().upper()
+    if not s or s == "-" or s == "NAN":
+        return ""
+    if s.isdigit():
+        return f"CHEBI:{s}"
+    if s.startswith("CHEBI:"):
+        return s
+    if s.startswith("CHEBI_"):
+        return s.replace("CHEBI_", "CHEBI:")
+    # if something odd comes in, keep it empty to avoid junk
+    return ""
+
+def _parse_chebi_any(x: object) -> List[str]:
+    """
+    Parses comma-separated values and normalizes tokens to CHEBI: format.
+    Works for Step1 (digits) and Step2 (already CHEBI:xxxx).
+    """
+    if x is None:
+        return []
+    s = str(x).strip()
+    if not s or s.lower() == "nan" or s == "-":
+        return []
+    toks = [t.strip() for t in s.split(",") if t.strip()]
+    out = []
+    for t in toks:
+        nt = _norm_chebi_token(t)
+        if nt:
+            out.append(nt)
+    return out
 
 @dataclass
 class Step2ChebiLookup:
@@ -148,6 +178,13 @@ class Step2ChebiLookup:
         out = meta_step1.copy()
         schema = Step2Schema()
         out = schema.ensure_columns(out)
+        
+        # --- Normalize Step1 IDs so they match Step2 formatting ---
+        if "ChEBI_ID" in out.columns:
+            out["ChEBI_ID"] = out["ChEBI_ID"].apply(lambda v: _join(sort_chebi_ids(_parse_chebi_any(v))))
+        if "KEGG_ID" in out.columns:
+            # keep KEGG as simple cleaned comma list
+            out["KEGG_ID"] = out["KEGG_ID"].apply(lambda v: _join(sort_kegg_ids(parse_kegg_list(v))))
 
         # Load heavy resources once per Step2ChebiLookup instance
         self._ensure_loaded()
@@ -181,8 +218,16 @@ class Step2ChebiLookup:
             out.at[idx, schema.chebi_fuzzy_col] = _join(fuzzy_hits)
             out.at[idx, schema.chebi_all_col]   = _join(all_hits)
     
-            chebis = sort_chebi_ids(parse_chebi_list(_join(all_hits)))
-            out.at[idx, schema.chebi_final_col] = _join(chebis)
+            # Step2 hits (from name index)
+            chebi_step2 = set(sort_chebi_ids(_parse_chebi_any(_join(all_hits))))
+
+            # Step1 hits (RefMet) - already normalized above
+            chebi_step1 = set(_parse_chebi_any(out.at[idx, "ChEBI_ID"])) if "ChEBI_ID" in out.columns else set()
+
+            # Union: keep everything
+            chebi_union = sort_chebi_ids(list(chebi_step1 | chebi_step2))
+            out.at[idx, schema.chebi_final_col] = _join(chebi_union)
+
         
         # ---- 2) Fill KEGG_ID_Step2 using CHEBI_ID_Step2 ----
         for idx in out.index:
@@ -192,8 +237,17 @@ class Step2ChebiLookup:
             for c in sort_chebi_ids(list(chebis)):
                 kegg_hits.extend(sorted(list(chebi_to_kegg.get(c, set()))))
     
-            kegg_final = sort_kegg_ids(parse_kegg_list(",".join(kegg_hits)))
-            out.at[idx, schema.kegg_final_col] = _join(kegg_final)
+            kegg_step2 = set(sort_kegg_ids(parse_kegg_list(",".join(kegg_hits))))
+            kegg_step1 = set(parse_kegg_list(out.at[idx, "KEGG_ID"])) if "KEGG_ID" in out.columns else set()
+
+            kegg_union = sort_kegg_ids(list(kegg_step1 | kegg_step2))
+            out.at[idx, schema.kegg_final_col] = _join(kegg_union)
+
+            # keep aligned for now
+            out.at[idx, schema.kegg_exact_col] = out.at[idx, schema.kegg_final_col]
+            out.at[idx, schema.kegg_fuzzy_col] = out.at[idx, schema.kegg_final_col]
+            out.at[idx, schema.kegg_all_col]   = out.at[idx, schema.kegg_final_col]
+
     
             # keep aligned for now
             out.at[idx, schema.kegg_exact_col] = out.at[idx, schema.kegg_final_col]
