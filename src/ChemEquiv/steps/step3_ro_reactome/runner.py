@@ -132,37 +132,72 @@ class Step3RO:
 
     def _get_chebi_mass(self, chebi_id: str, *, ctx: Optional[PipelineContext] = None) -> Optional[float]:
         """
-        Read the ChEBI mass from ontology annotations, cached per CHEBI ID.
-        Looks for an annotation property containing 'chebi/mass'.
+        Read a ChEBI mass from ontology annotations, cached per CHEBI ID.
+    
+        Accepts multiple annotation property names because pronto / ontology exports
+        may expose mass as e.g.:
+          - mass
+          - monoisotopic_mass
+          - exact_mass
+          - ...or other mass-like properties
         """
         chebi_id = str(chebi_id).strip().upper()
         if not chebi_id.startswith("CHEBI:"):
             return None
-
+    
         if chebi_id in self._mass_cache:
             return self._mass_cache[chebi_id]
-
+    
         self._ensure_ontology(ctx=ctx)
         assert self._onto is not None
-
+    
         term = _get_term(self._onto, chebi_id)
         if term is None:
             self._mass_cache[chebi_id] = None
             return None
-
+    
         mass_val: Optional[float] = None
+    
         try:
-            # Your suggested pattern, but made robust
-            for ann in getattr(term, "annotations", []):
-                prop = getattr(ann, "property", "")
-                if prop and "chebi/mass" in str(prop):
-                    lit = getattr(ann, "literal", None)
-                    mass_val = self._parse_float(lit)
-                    if mass_val is not None:
+            anns = getattr(term, "annotations", []) or []
+    
+            # Prefer monoisotopic mass first, then generic mass
+            preferred_tokens = [
+                "monoisotopic_mass",
+                "monoisotopic mass",
+                "exact_mass",
+                "exact mass",
+                "chemrof:mass",
+                "mass",
+            ]
+    
+            candidates = []
+    
+            for ann in anns:
+                prop = str(getattr(ann, "property", "")).strip().lower()
+                lit = getattr(ann, "literal", None)
+    
+                if lit is None:
+                    continue
+    
+                lit_val = self._parse_float(lit)
+                if lit_val is None:
+                    continue
+    
+                candidates.append((prop, lit_val))
+    
+            # ranked search
+            for token in preferred_tokens:
+                for prop, val in candidates:
+                    if token in prop:
+                        mass_val = val
                         break
+                if mass_val is not None:
+                    break
+    
         except Exception:
             mass_val = None
-
+    
         self._mass_cache[chebi_id] = mass_val
         return mass_val
 
