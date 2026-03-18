@@ -149,7 +149,7 @@ class Step4IsASpecialization:
         if chebi_id in self._mass_cache:
             return self._mass_cache[chebi_id]
     
-        self._ensure_ontology(ctx=ctx)
+        self._ensure_ontology_and_maps(ctx=ctx)
         assert self._onto is not None
     
         term = _get_term(self._onto, chebi_id)
