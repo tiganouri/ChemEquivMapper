@@ -242,9 +242,21 @@ class StepwiseORA:
         bg = set(background)
 
         if len(bg) == 0:
-            return pd.DataFrame(columns=["pathway_id", "pathway_size", "overlap", "oddsratio", "p_value", "q_value"])
+            return pd.DataFrame(columns=[
+                "pathway_id",
+                "pathway_size",
+                "foreground_size",
+                "background_size",
+                "foreground_in_pathway",
+                "foreground_not_in_pathway",
+                "background_in_pathway_not_foreground",
+                "background_not_in_pathway_not_foreground",
+                "oddsratio",
+                "p_value",
+                "q_value",
+            ])
 
-        rows: List[Tuple[str, int, int, float, float]] = []
+        rows: List[Tuple[str, int, int, int, int, int, int, int, float, float]] = []
         pvals: List[float] = []
 
         for pw, ids_in_pw in pw2ids_all.items():
@@ -252,26 +264,66 @@ class StepwiseORA:
             if len(ids_in_pw) < min_pathway_size:
                 continue
 
-            a = len(ids_in_pw & fg)
+            a = len(ids_in_pw & fg)                 # significant in pathway
             if a == 0:
                 continue
 
-            b = len(fg) - a
-            c = len(ids_in_pw) - a
-            d = len(bg) - (a + b + c)
+            b = len(fg) - a                        # significant not in pathway
+            c = len(ids_in_pw) - a                 # non-significant in pathway
+            d = len(bg) - (a + b + c)              # non-significant not in pathway
 
             odds, p = fisher_exact_right_tail(a, b, c, d)
-            rows.append((str(pw), len(ids_in_pw), a, odds, p))
+
+            rows.append((
+                str(pw),
+                len(ids_in_pw),    # pathway_size
+                len(fg),           # foreground_size
+                len(bg),           # background_size
+                a,
+                b,
+                c,
+                d,
+                odds,
+                p,
+            ))
             pvals.append(p)
 
         if not rows:
-            return pd.DataFrame(columns=["pathway_id", "pathway_size", "overlap", "oddsratio", "p_value", "q_value"])
+            return pd.DataFrame(columns=[
+                "pathway_id",
+                "pathway_size",
+                "foreground_size",
+                "background_size",
+                "foreground_in_pathway",
+                "foreground_not_in_pathway",
+                "background_in_pathway_not_foreground",
+                "background_not_in_pathway_not_foreground",
+                "oddsratio",
+                "p_value",
+                "q_value",
+            ])
 
         qvals = fdr_bh(pvals, alpha=fdr_alpha)
 
-        out = pd.DataFrame(rows, columns=["pathway_id", "pathway_size", "overlap", "oddsratio", "p_value"])
+        out = pd.DataFrame(rows, columns=[
+            "pathway_id",
+            "pathway_size",
+            "foreground_size",
+            "background_size",
+            "foreground_in_pathway",
+            "foreground_not_in_pathway",
+            "background_in_pathway_not_foreground",
+            "background_not_in_pathway_not_foreground",
+            "oddsratio",
+            "p_value",
+        ])
         out["q_value"] = qvals
-        out = out.sort_values(["q_value", "p_value", "overlap"], ascending=[True, True, False]).reset_index(drop=True)
+
+        out = out.sort_values(
+            ["q_value", "p_value", "foreground_in_pathway"],
+            ascending=[True, True, False]
+        ).reset_index(drop=True)
+
         return out
 
     # ---------- Run per step + all steps ----------
