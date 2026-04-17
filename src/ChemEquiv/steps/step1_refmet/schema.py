@@ -9,7 +9,7 @@ import pandas as pd
 REFMET_CANONICAL_COLUMNS: List[str] = [
     "Input name",
     "RefMet_ID",
-    "RefMet name",
+  #  "RefMet name",
     "Formula",
     "Exact mass",
     "Super class",
@@ -27,7 +27,7 @@ REFMET_CANONICAL_COLUMNS: List[str] = [
 # If RefMet uses slightly different headers, map them to canonical.
 REFMET_COLUMN_ALIASES: Dict[str, str] = {
     "Exact_mass": "Exact mass",
-    "RefMet_name": "RefMet name",
+  #  "RefMet_name": "RefMet name",
     "Super_class": "Super class",
     "Main_class": "Main class",
     "Sub_class": "Sub class",
