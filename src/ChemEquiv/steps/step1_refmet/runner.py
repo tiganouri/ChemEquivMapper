@@ -268,7 +268,10 @@ class Step1RefMet:
         # 4) RefMet POST + cache (schema normalized)
         df_ann = self.run_refmet_post(names_unique)
         df_ann = RefMetSchema().normalize_df(df_ann)  # safe redundancy
-
+        
+        if "ChEBI_ID" in df_ann.columns:
+            df_ann["ChEBI_ID"] = df_ann["ChEBI_ID"].apply(_normalize_chebi_cell)
+    
         # 5) Standard mapping using ctx (required if map_pathways=True)
         if map_pathways and (df_ann is not None) and (not df_ann.empty):
             if ctx is None:
