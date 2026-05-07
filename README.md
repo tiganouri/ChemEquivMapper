@@ -4,9 +4,9 @@ ChemEquivMapper is a Python package that improves metabolite-to-pathway mapping 
 
 The package expands pathway coverage through:
 
-synonym and ontology-based identifier completion
-charge-state harmonization
-tautomer and enantiomer equivalence mapping
-ontology-guided specialization and optional generalization
+- synonym and ontology-based identifier completion
+- charge-state harmonization
+- tautomer and enantiomer equivalence mapping
+- ontology-guided specialization and optional generalization
 
 This substantially increases the number of metabolites that can be linked to biological pathways in typical untargeted metabolomics datasets.
