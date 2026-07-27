@@ -1,0 +1,850 @@
+metabolite_id	p_value	method_used	n_features	n_per_group	p_adj	significant
+cysteine s-sulfate	5.960684884959379e-69	single	1	Healthy Donor:133,COVID19:254	5.060621467330513e-66	True
+levulinate (4-oxovalerate)	7.307008923644501e-68	single	1	Healthy Donor:133,COVID19:254	3.101825288087091e-65	True
+inosine	1.0485004045187884e-63	single	1	Healthy Donor:133,COVID19:254	2.967256144788171e-61	True
+beta-citrylglutamate	2.5364737088396402e-57	single	1	Healthy Donor:133,COVID19:254	5.3836654470121364e-55	True
+N-acetylneuraminate	3.6152217856458645e-57	single	1	Healthy Donor:133,COVID19:254	6.1386465920266774e-55	True
+6-oxopiperidine-2-carboxylate	1.0005541761661953e-51	single	1	Healthy Donor:133,COVID19:254	1.4157841592751663e-49	True
+4-hydroxyphenylpyruvate	1.0027427604759703e-44	single	1	Healthy Donor:133,COVID19:254	1.2161837194915696e-42	True
+dodecadienoate (12:2)	2.4371106307891477e-44	single	1	Healthy Donor:133,COVID19:254	2.5863836569249833e-42	True
+branched-chain, straight-chain, or cyclopropyl 12:1 fatty acid	6.533843164028247e-41	single	1	Healthy Donor:133,COVID19:254	6.16359205139998e-39	True
+10-undecenoate (11:1n1)	8.161840192299837e-41	single	1	Healthy Donor:133,COVID19:254	6.929402323262561e-39	True
+iminodiacetate (IDA)	2.59920634947669e-40	single	1	Healthy Donor:133,COVID19:254	2.0061147188233725e-38	True
+5-methyluridine (ribothymidine)	2.1666746377298126e-39	single	1	Healthy Donor:133,COVID19:254	1.5329223061938425e-37	True
+3-hydroxylaurate	2.5967326125914482e-39	single	1	Healthy Donor:133,COVID19:254	1.6958661446847227e-37	True
+3-carboxy-4-methyl-5-pentyl-2-furanpropionate (3-CMPFP)	5.675305526947139e-39	single	1	Healthy Donor:133,COVID19:254	3.4416674231272293e-37	True
+1-palmitoyl-2-oleoyl-GPE (16:0/18:1)	2.950684234705565e-38	single	1	Healthy Donor:133,COVID19:254	1.6700872768433496e-36	True
+2-hydroxyglutarate	7.524540414638895e-36	single	1	Healthy Donor:133,COVID19:254	3.874217243780517e-34	True
+3-hydroxymyristate	7.75756102994921e-36	single	1	Healthy Donor:133,COVID19:254	3.874217243780517e-34	True
+threonate	1.859357628072221e-35	single	1	Healthy Donor:133,COVID19:254	8.769970145740642e-34	True
+sphingomyelin (d18:1/21:0, d17:1/22:0, d16:1/23:0)	3.406495645709354e-35	single	1	Healthy Donor:133,COVID19:254	1.5221656858985483e-33	True
+hypotaurine	1.4743192829956464e-34	single	1	Healthy Donor:133,COVID19:254	6.258485356316519e-33	True
+(N(1) + N(8))-acetylspermidine	4.318932626275194e-34	single	1	Healthy Donor:133,COVID19:254	1.7460827617655427e-32	True
+hydantoin-5-propionate	9.110685586982367e-34	single	1	Healthy Donor:133,COVID19:254	3.5158963924309225e-32	True
+quinolinate	2.586260751806818e-33	single	1	Healthy Donor:133,COVID19:254	9.546675557756471e-32	True
+1-carboxyethylphenylalanine	1.1037868417974375e-32	single	1	Healthy Donor:133,COVID19:254	3.904645952858435e-31	True
+3-ureidopropionate	1.5902297598379902e-32	single	1	Healthy Donor:133,COVID19:254	5.4004202644098145e-31	True
+1-palmitoyl-2-arachidonoyl-GPE (16:0/20:4)	1.7207808868541247e-32	single	1	Healthy Donor:133,COVID19:254	5.619011434381353e-31	True
+sphingosine	2.569152842277776e-32	single	1	Healthy Donor:133,COVID19:254	8.078558381829008e-31	True
+sphingomyelin (d18:1/25:0, d19:0/24:1, d20:1/23:0, d19:1/24:0)	6.40190357290542e-32	single	1	Healthy Donor:133,COVID19:254	1.9411486190702507e-30	True
+1-stearoyl-GPC (18:0)	8.093269673912321e-32	single	1	Healthy Donor:133,COVID19:254	2.3693744666039864e-30	True
+N-acetylmethionine	2.51175176712822e-31	single	1	Healthy Donor:133,COVID19:254	7.108257500972862e-30	True
+5-methylthioadenosine (MTA)	4.776608001006787e-31	single	1	Healthy Donor:133,COVID19:254	1.3081742557596005e-29	True
+sarcosine	4.9868312991251685e-31	single	1	Healthy Donor:133,COVID19:254	1.3230686790491464e-29	True
+(2 or 3)-decenoate (10:1n7 or n8)	9.623155792497318e-31	single	1	Healthy Donor:133,COVID19:254	2.4757755357061282e-29	True
+tetradecadienoate (14:2)	2.2071038650720927e-30	single	1	Healthy Donor:133,COVID19:254	5.511268180724137e-29	True
+1-palmitoyl-2-linoleoyl-GPE (16:0/18:2)	4.4995510387189566e-30	single	1	Healthy Donor:133,COVID19:254	1.0914625233921127e-28	True
+3-phosphoglycerate	5.6803549684338514e-30	single	1	Healthy Donor:133,COVID19:254	1.3396170467223166e-28	True
+1-stearoyl-2-oleoyl-GPS (18:0/18:1)	9.237809303324132e-30	single	1	Healthy Donor:133,COVID19:254	2.1197027293303213e-28	True
+1-(1-enyl-palmitoyl)-2-dihomo-linolenoyl-GPC (P-16:0/20:3)	1.736176928424521e-29	single	1	Healthy Donor:133,COVID19:254	3.8789847690326797e-28	True
+sphingosine 1-phosphate	2.554003058172015e-29	single	1	Healthy Donor:133,COVID19:254	5.5598681958667705e-28	True
+aspartate	3.1329324840443805e-29	single	1	Healthy Donor:133,COVID19:254	6.649649197384198e-28	True
+1-(1-enyl-palmitoyl)-2-linoleoyl-GPC (P-16:0/18:2)	7.472706148990017e-29	single	1	Healthy Donor:133,COVID19:254	1.5473969562176888e-27	True
+citrate	9.769761383502269e-29	single	1	Healthy Donor:133,COVID19:254	1.9748874796651017e-27	True
+tricosanoyl sphingomyelin (d18:1/23:0)	1.0732413602694165e-28	single	1	Healthy Donor:133,COVID19:254	2.1190277089970573e-27	True
+laurylcarnitine (C12)	1.3731846847888844e-28	single	1	Healthy Donor:133,COVID19:254	2.6496222667858244e-27	True
+1-(1-enyl-palmitoyl)-2-arachidonoyl-GPC (P-16:0/20:4)	2.1971607671477035e-28	single	1	Healthy Donor:133,COVID19:254	4.145309980685334e-27	True
+kynurenine	4.058867995465705e-28	single	1	Healthy Donor:133,COVID19:254	7.491258539457355e-27	True
+1-palmitoyl-GPC (16:0)	4.6018236126759295e-28	single	1	Healthy Donor:133,COVID19:254	8.312655845025244e-27	True
+1-(1-enyl-palmitoyl)-GPC (P-16:0)	5.030229789333895e-28	single	1	Healthy Donor:133,COVID19:254	8.897218939884327e-27	True
+uridine	6.181219785286215e-28	single	1	Healthy Donor:133,COVID19:254	1.0709909383077543e-26	True
+1,2-dipalmitoyl-GPC (16:0/16:0)	7.882872608760349e-28	single	1	Healthy Donor:133,COVID19:254	1.3385117689675072e-26	True
+decanoylcarnitine (C10)	9.854371684133843e-28	single	1	Healthy Donor:133,COVID19:254	1.640463050946987e-26	True
+phenylalanine	1.556925511327732e-27	single	1	Healthy Donor:133,COVID19:254	2.541980305994701e-26	True
+1-(1-enyl-palmitoyl)-2-docosahexaenoyl-GPC (P-16:0/22:6)	1.7064910075120642e-27	single	1	Healthy Donor:133,COVID19:254	2.7336054063730994e-26	True
+1-stearoyl-2-arachidonoyl-GPE (18:0/20:4)	2.187440048525165e-27	single	1	Healthy Donor:133,COVID19:254	3.439141854070121e-26	True
+1-(1-enyl-stearoyl)-2-linoleoyl-GPC (P-18:0/18:2)	2.696757392716248e-27	single	1	Healthy Donor:133,COVID19:254	4.1628127753019903e-26	True
+1-stearoyl-2-oleoyl-GPE (18:0/18:1)	4.021283996792331e-27	single	1	Healthy Donor:133,COVID19:254	6.096553773708374e-26	True
+phosphoethanolamine	1.0310883552144123e-26	single	1	Healthy Donor:133,COVID19:254	1.5349979300838194e-25	True
+1-pentadecanoyl-GPC (15:0)	1.0486440511762253e-26	single	1	Healthy Donor:133,COVID19:254	1.5349979300838194e-25	True
+1-myristoyl-GPC (14:0)	8.205904453102425e-26	single	1	Healthy Donor:133,COVID19:254	1.1808157424888067e-24	True
+1-margaroyl-GPC (17:0)	1.1762150768342308e-25	single	1	Healthy Donor:133,COVID19:254	1.6643443337204363e-24	True
+carotene diol	1.5575255845814314e-25	aggregate	3	Healthy Donor:133,COVID19:254	2.1677692152616974e-24	True
+N-acetylvaline	2.4428890780953252e-25	single	1	Healthy Donor:133,COVID19:254	3.345181979520856e-24	True
+myristoyl dihydrosphingomyelin (d18:0/14:0)	4.229202943123848e-25	single	1	Healthy Donor:133,COVID19:254	5.699354442400234e-24	True
+perfluorooctanoate (PFOA)	4.813116738300926e-25	single	1	Healthy Donor:133,COVID19:254	6.384900173152323e-24	True
+N-acetylserine	1.3828841957984075e-24	single	1	Healthy Donor:133,COVID19:254	1.8062595111274583e-23	True
+glycocholate	1.48349668623096e-24	single	1	Healthy Donor:133,COVID19:254	1.9083161918334623e-23	True
+eicosanedioate (C20-DC)	1.7593529849672082e-24	single	1	Healthy Donor:133,COVID19:254	2.2293890809509845e-23	True
+1,2-dilinoleoyl-GPC (18:2/18:2)	4.971667500903351e-24	single	1	Healthy Donor:133,COVID19:254	6.207273100392566e-23	True
+sphingomyelin (d18:1/22:1, d18:2/22:0, d16:1/24:1)	5.8567094293603206e-24	single	1	Healthy Donor:133,COVID19:254	7.206298993517264e-23	True
+1-palmitoleoyl-2-eicosapentaenoyl-GPC (16:1/20:5)	6.4527997868618506e-24	single	1	Healthy Donor:133,COVID19:254	7.826324312922444e-23	True
+sphingomyelin (d18:1/20:0, d16:1/22:0)	1.116269261152338e-23	single	1	Healthy Donor:133,COVID19:254	1.3348064827018801e-22	True
+tetrahydrocortisone glucuronide	1.6047314307738797e-23	single	1	Healthy Donor:133,COVID19:254	1.8922458121208664e-22	True
+3-hydroxydecanoate	3.204943726752022e-23	single	1	Healthy Donor:133,COVID19:254	3.727393457551324e-22	True
+arachidonoyl ethanolamide	6.288924303431282e-23	single	1	Healthy Donor:133,COVID19:254	7.215265856233998e-22	True
+lignoceroyl sphingomyelin (d18:1/24:0)	7.566560513207502e-23	single	1	Healthy Donor:133,COVID19:254	8.565346500950891e-22	True
+5-hydroxylysine	7.856478601108746e-23	single	1	Healthy Donor:133,COVID19:254	8.776513595185954e-22	True
+glycochenodeoxycholate	8.79581506500464e-23	single	1	Healthy Donor:133,COVID19:254	9.69824284440122e-22	True
+bilirubin	1.1216780323837594e-22	aggregate	10	Healthy Donor:133,COVID19:254	1.2209033967869382e-21	True
+sphingomyelin (d18:2/14:0, d18:1/14:1)	1.3027199283182257e-22	single	1	Healthy Donor:133,COVID19:254	1.4000116698002197e-21	True
+6-bromotryptophan	1.4907428589615232e-22	single	1	Healthy Donor:133,COVID19:254	1.5820508590729164e-21	True
+eicosapentaenoate (EPA; 20:5n3)	1.7844839721497512e-22	single	1	Healthy Donor:133,COVID19:254	1.8704035708088134e-21	True
+3-hydroxy-3-methylglutarate	2.4415095921765286e-22	single	1	Healthy Donor:133,COVID19:254	2.5278556631193567e-21	True
+sphingomyelin (d18:1/14:0, d16:1/16:0)	2.657703881323146e-22	single	1	Healthy Donor:133,COVID19:254	2.7185428858353627e-21	True
+1-linoleoyl-2-docosahexaenoyl-GPC (18:2/22:6)	3.645017448007173e-22	single	1	Healthy Donor:133,COVID19:254	3.6718093887242094e-21	True
+3-hydroxyoctanoylcarnitine	3.67613425255074e-22	single	1	Healthy Donor:133,COVID19:254	3.6718093887242094e-21	True
+imidazole propionate	3.9033196457725636e-22	single	1	Healthy Donor:133,COVID19:254	3.853393464256868e-21	True
+1-arachidoyl-GPC (20:0)	4.00823900143685e-22	single	1	Healthy Donor:133,COVID19:254	3.911488404850443e-21	True
+1-(1-enyl-stearoyl)-2-linoleoyl-GPE (P-18:0/18:2)	5.380308332865833e-22	single	1	Healthy Donor:133,COVID19:254	5.190774743867151e-21	True
+1-(1-enyl-stearoyl)-2-arachidonoyl-GPC (P-18:0/20:4)	5.842970324886429e-22	single	1	Healthy Donor:133,COVID19:254	5.573799781829863e-21	True
+cystine	6.639847126105591e-22	single	1	Healthy Donor:133,COVID19:254	6.263589122292941e-21	True
+1-(1-enyl-oleoyl)-GPC (P-18:1)	6.887435291857999e-22	single	1	Healthy Donor:133,COVID19:254	6.425750068997188e-21	True
+C-glycosyltryptophan	9.927402250878898e-22	single	1	Healthy Donor:133,COVID19:254	9.161265772821939e-21	True
+N-acetylglutamate	2.29463911914019e-21	single	1	Healthy Donor:133,COVID19:254	2.094783453924754e-20	True
+N-stearoyl-sphingosine (d18:1/18:0)	2.912126598691142e-21	single	1	Healthy Donor:133,COVID19:254	2.6302079598816804e-20	True
+1-palmitoleoyl-GPC (16:1)	3.448842878361911e-21	single	1	Healthy Donor:133,COVID19:254	3.082176424978171e-20	True
+picolinate	3.833061999077116e-21	single	1	Healthy Donor:133,COVID19:254	3.3898642054338244e-20	True
+2-aminooctanoate	3.9967344829453255e-21	single	1	Healthy Donor:133,COVID19:254	3.498172758784104e-20	True
+taurocholate	5.933180403987671e-21	single	1	Healthy Donor:133,COVID19:254	5.1400715948831964e-20	True
+docosahexaenoate (DHA; 22:6n3)	6.813331544023167e-21	single	1	Healthy Donor:133,COVID19:254	5.842947960480473e-20	True
+maleate	1.1115731874228542e-20	single	1	Healthy Donor:133,COVID19:254	9.437256361220033e-20	True
+hexadecadienoate (16:2n6)	1.1761466088983697e-20	single	1	Healthy Donor:133,COVID19:254	9.886618524304117e-20	True
+1-oleoyl-2-arachidonoyl-GPE (18:1/20:4)	1.2813174674365764e-20	single	1	Healthy Donor:133,COVID19:254	1.066508362601621e-19	True
+glucuronate	2.729839779249858e-20	single	1	Healthy Donor:133,COVID19:254	2.2501300704690575e-19	True
+2-ketocaprylate	3.102380378507588e-20	single	1	Healthy Donor:133,COVID19:254	2.5326162897624442e-19	True
+1-(1-enyl-oleoyl)-GPE (P-18:1)	3.595172528465755e-20	single	1	Healthy Donor:133,COVID19:254	2.9069537873023102e-19	True
+1-carboxyethylleucine	3.966959577249192e-20	single	1	Healthy Donor:133,COVID19:254	3.1773100764948717e-19	True
+retinol (Vitamin A)	5.153960540826871e-20	single	1	Healthy Donor:133,COVID19:254	4.0894509337962743e-19	True
+1-palmityl-GPC (O-16:0)	5.364209890198701e-20	single	1	Healthy Donor:133,COVID19:254	4.2168649970173126e-19	True
+taurochenodeoxycholate	6.558921932391473e-20	single	1	Healthy Donor:133,COVID19:254	5.108738275780147e-19	True
+octanoylcarnitine (C8)	7.406542250239171e-20	single	1	Healthy Donor:133,COVID19:254	5.7165039731391415e-19	True
+cytidine	1.3069982987351845e-19	single	1	Healthy Donor:133,COVID19:254	9.99677077140695e-19	True
+S-methylcysteine sulfoxide	1.4555747786566867e-19	single	1	Healthy Donor:133,COVID19:254	1.103377667035292e-18	True
+1-(1-enyl-palmitoyl)-2-linoleoyl-GPE (P-16:0/18:2)	2.517955445541345e-19	single	1	Healthy Donor:133,COVID19:254	1.8918090028890282e-18	True
+glycochenodeoxycholate 3-sulfate	2.6725289091885095e-19	single	1	Healthy Donor:133,COVID19:254	1.990330740264074e-18	True
+behenoyl sphingomyelin (d18:1/22:0)	5.679616324566693e-19	single	1	Healthy Donor:133,COVID19:254	4.1930384865714115e-18	True
+sphingomyelin (d18:2/23:0, d18:1/23:1, d17:1/24:1)	6.779378670966059e-19	single	1	Healthy Donor:133,COVID19:254	4.961803872112228e-18	True
+1-oleoyl-GPC (18:1)	8.747562592892098e-19	single	1	Healthy Donor:133,COVID19:254	6.347590291765291e-18	True
+arachidonate (20:4n6)	1.2603432850844994e-18	single	1	Healthy Donor:133,COVID19:254	9.06806312743e-18	True
+thioproline	1.711296058514815e-18	single	1	Healthy Donor:133,COVID19:254	1.2209162635958638e-17	True
+1-oleoyl-2-docosahexaenoyl-GPC (18:1/22:6)	1.85790803606134e-18	single	1	Healthy Donor:133,COVID19:254	1.314469935513398e-17	True
+1-(1-enyl-palmitoyl)-2-palmitoyl-GPC (P-16:0/16:0)	2.1471008943315026e-18	single	1	Healthy Donor:133,COVID19:254	1.5065195531301203e-17	True
+1-stearoyl-2-linoleoyl-GPE (18:0/18:2)	2.9016629780545977e-18	single	1	Healthy Donor:133,COVID19:254	2.019272023252749e-17	True
+4-vinylphenol sulfate	3.663166305254866e-18	single	1	Healthy Donor:133,COVID19:254	2.5284782058222612e-17	True
+1-myristoyl-2-docosahexaenoyl-GPC (14:0/22:6)	4.286645276490143e-18	single	1	Healthy Donor:133,COVID19:254	2.93496922559688e-17	True
+dimethylglycine	4.607533891476262e-18	single	1	Healthy Donor:133,COVID19:254	3.1294370190906775e-17	True
+5-dodecenoate (12:1n7)	5.0151147286333986e-18	single	1	Healthy Donor:133,COVID19:254	3.379232067150599e-17	True
+1-(1-enyl-palmitoyl)-2-oleoyl-GPC (P-16:0/18:1)	5.467146646923704e-18	single	1	Healthy Donor:133,COVID19:254	3.654809057667893e-17	True
+sphinganine-1-phosphate	6.271920094647394e-18	single	1	Healthy Donor:133,COVID19:254	4.1600470002778426e-17	True
+docosapentaenoate (n3 DPA; 22:5n3)	1.3048560619521402e-17	single	1	Healthy Donor:133,COVID19:254	8.587773617033854e-17	True
+N-acetylisoleucine	1.378672611277485e-17	single	1	Healthy Donor:133,COVID19:254	9.003792669035267e-17	True
+phenylalanyltryptophan	1.651386518600323e-17	single	1	Healthy Donor:133,COVID19:254	1.0702497361005147e-16	True
+2-aminoadipate	2.0526314083877304e-17	single	1	Healthy Donor:133,COVID19:254	1.3202152013039266e-16	True
+docosadioate (C22-DC)	2.3399109576946006e-17	single	1	Healthy Donor:133,COVID19:254	1.493672483520839e-16	True
+epiandrosterone sulfate	2.60034612317643e-17	single	1	Healthy Donor:133,COVID19:254	1.6475327302811858e-16	True
+fructose	3.6061092060686864e-17	single	1	Healthy Donor:133,COVID19:254	2.2678420118165294e-16	True
+N-acetyl-2-aminooctanoate	3.639940135044278e-17	single	1	Healthy Donor:133,COVID19:254	2.2722861578327883e-16	True
+N-stearoyl-sphinganine (d18:0/18:0)	7.832188995032383e-17	single	1	Healthy Donor:133,COVID19:254	4.853670406410578e-16	True
+biliverdin	8.184672489684458e-17	single	1	Healthy Donor:133,COVID19:254	5.035352857784134e-16	True
+1-palmityl-2-linoleoyl-GPC (O-16:0/18:2)	9.114388233953279e-17	single	1	Healthy Donor:133,COVID19:254	5.566989647932615e-16	True
+ribitol	9.931773210540362e-17	single	1	Healthy Donor:133,COVID19:254	6.022911039820548e-16	True
+beta-hydroxyisovalerate	1.2099291832133514e-16	single	1	Healthy Donor:133,COVID19:254	7.285318273391031e-16	True
+sphingomyelin (d18:2/18:1)	1.22095158559601e-16	single	1	Healthy Donor:133,COVID19:254	7.299914761767694e-16	True
+guanidinoacetate	1.309631741142089e-16	single	1	Healthy Donor:133,COVID19:254	7.775366071535899e-16	True
+palmitoyl-oleoyl-glycerol (16:0/18:1)	1.4338467127895728e-16	aggregate	2	Healthy Donor:133,COVID19:254	8.453721244155189e-16	True
+alpha-ketoglutaramate	1.925621280387351e-16	single	1	Healthy Donor:133,COVID19:254	1.1274844600336973e-15	True
+1-linoleoyl-GPC (18:2)	1.9720215721082717e-16	single	1	Healthy Donor:133,COVID19:254	1.1467440511780293e-15	True
+1-myristoyl-2-arachidonoyl-GPC (14:0/20:4)	2.4187100320845196e-16	single	1	Healthy Donor:133,COVID19:254	1.3969284471018756e-15	True
+piperine	4.3930998263979723e-16	single	1	Healthy Donor:133,COVID19:254	2.52009577879181e-15	True
+adenine	4.547250419856179e-16	single	1	Healthy Donor:133,COVID19:254	2.5910171855422123e-15	True
+N-acetylphenylalanine	4.766950300525242e-16	single	1	Healthy Donor:133,COVID19:254	2.6980938700972868e-15	True
+undecenoylcarnitine (C11:1)	5.357586899698186e-16	single	1	Healthy Donor:133,COVID19:254	3.0123121045322913e-15	True
+1-pentadecanoyl-2-docosahexaenoyl-GPC (15:0/22:6)	5.7199765965474995e-16	single	1	Healthy Donor:133,COVID19:254	3.194907980571597e-15	True
+1-carboxyethylvaline	6.498561834135844e-16	single	1	Healthy Donor:133,COVID19:254	3.606064704040086e-15	True
+1-myristoyl-2-linoleoyl-GPC (14:0/18:2)	7.011911273604962e-16	single	1	Healthy Donor:133,COVID19:254	3.865657578760138e-15	True
+1-eicosenoyl-GPC (20:1)	8.109315797268731e-16	single	1	Healthy Donor:133,COVID19:254	4.441812330245905e-15	True
+myristoleoylcarnitine (C14:1)	1.135787426979345e-15	single	1	Healthy Donor:133,COVID19:254	6.181304650676051e-15	True
+3-decenoylcarnitine	1.1811108136466567e-15	single	1	Healthy Donor:133,COVID19:254	6.387025992267589e-15	True
+sebacate (C10-DC)	1.2657372753340057e-15	single	1	Healthy Donor:133,COVID19:254	6.801335106066905e-15	True
+N6-carbamoylthreonyladenosine	1.4830882520151638e-15	single	1	Healthy Donor:133,COVID19:254	7.919131609816818e-15	True
+N-palmitoyl-sphinganine (d18:0/16:0)	1.607492200122606e-15	single	1	Healthy Donor:133,COVID19:254	8.529755486900577e-15	True
+adipoylcarnitine (C6-DC)	1.832974107686237e-15	single	1	Healthy Donor:133,COVID19:254	9.665807561649785e-15	True
+choline phosphate	1.98620560829749e-15	single	1	Healthy Donor:133,COVID19:254	1.0409188650892401e-14	True
+1-arachidonoyl-GPC (20:4n6)	2.0257304154002106e-15	single	1	Healthy Donor:133,COVID19:254	1.055119707162441e-14	True
+ceramide (d18:1/17:0, d17:1/18:0)	2.369336306889804e-15	single	1	Healthy Donor:133,COVID19:254	1.226564953993563e-14	True
+tryptophan betaine	2.572211806354329e-15	single	1	Healthy Donor:133,COVID19:254	1.323519893087773e-14	True
+1-(1-enyl-stearoyl)-GPE (P-18:0)	2.757788462416529e-15	single	1	Healthy Donor:133,COVID19:254	1.4074620000931604e-14	True
+2-myristoyl-GPC (14:0)	2.768505936579008e-15	single	1	Healthy Donor:133,COVID19:254	1.4074620000931604e-14	True
+1-dihomo-linolenoyl-GPC (20:3n3 or 6)	4.368232118716601e-15	single	1	Healthy Donor:133,COVID19:254	2.2075173028514252e-14	True
+1-(1-enyl-oleoyl)-2-docosahexaenoyl-GPE (P-18:1/22:6)	5.321908868256791e-15	single	1	Healthy Donor:133,COVID19:254	2.659631459527154e-14	True
+myristoleate (14:1n5)	5.3255282464030174e-15	single	1	Healthy Donor:133,COVID19:254	2.659631459527154e-14	True
+cis-4-decenoylcarnitine (C10:1)	5.511339442552898e-15	single	1	Healthy Donor:133,COVID19:254	2.7363316881446845e-14	True
+hypoxanthine	7.84002559090229e-15	single	1	Healthy Donor:133,COVID19:254	3.869873096904677e-14	True
+adenosine	9.014860908961646e-15	single	1	Healthy Donor:133,COVID19:254	4.424056018328576e-14	True
+suberoylcarnitine (C8-DC)	9.79262821292712e-15	single	1	Healthy Donor:133,COVID19:254	4.7781272142385775e-14	True
+N-acetylleucine	1.0268915025681775e-14	single	1	Healthy Donor:133,COVID19:254	4.9818907753164726e-14	True
+phosphatidylcholine (16:0/22:5n3, 18:1/20:4)	1.0908656661228709e-14	single	1	Healthy Donor:133,COVID19:254	5.262187218967712e-14	True
+dihomo-linolenate (20:3n3 or n6)	1.2631840680310264e-14	single	1	Healthy Donor:133,COVID19:254	6.059001546657296e-14	True
+1-stearyl-GPC (O-18:0)	1.3462857533480382e-14	single	1	Healthy Donor:133,COVID19:254	6.421329239283621e-14	True
+1-(1-enyl-palmitoyl)-2-myristoyl-GPC (P-16:0/14:0)	1.3657920157363031e-14	single	1	Healthy Donor:133,COVID19:254	6.477974421006265e-14	True
+nicotinamide	1.4577440018774536e-14	single	1	Healthy Donor:133,COVID19:254	6.875692542188655e-14	True
+1-(1-enyl-palmitoyl)-2-docosahexaenoyl-GPE (P-16:0/22:6)	1.5164984371385337e-14	single	1	Healthy Donor:133,COVID19:254	7.113299299064172e-14	True
+1-(1-enyl-palmitoyl)-2-palmitoleoyl-GPC (P-16:0/16:1)	1.802401025584957e-14	single	1	Healthy Donor:133,COVID19:254	8.407903685283672e-14	True
+1-eicosapentaenoyl-GPC (20:5)	2.1309792370932097e-14	single	1	Healthy Donor:133,COVID19:254	9.886346296678334e-14	True
+oleoyl ethanolamide	2.2747334838592405e-14	single	1	Healthy Donor:133,COVID19:254	1.0495916998893996e-13	True
+N1-methyladenosine	3.029878613129638e-14	single	1	Healthy Donor:133,COVID19:254	1.3904686175930069e-13	True
+nonanoylcarnitine (C9)	3.1272206698386684e-14	single	1	Healthy Donor:133,COVID19:254	1.4274249186521663e-13	True
+1-dihomo-linoleoyl-GPC (20:2)	3.4112599791992776e-14	single	1	Healthy Donor:133,COVID19:254	1.5487485146204206e-13	True
+1-(1-enyl-stearoyl)-2-docosahexaenoyl-GPC (P-18:0/22:6)	3.5350175878428724e-14	single	1	Healthy Donor:133,COVID19:254	1.5963989000418078e-13	True
+lanthionine	4.231791837800292e-14	single	1	Healthy Donor:133,COVID19:254	1.9009477620594964e-13	True
+dehydroepiandrosterone sulfate (DHEA-S)	4.754424916235034e-14	single	1	Healthy Donor:133,COVID19:254	2.1244772388860756e-13	True
+1-palmitoyl-2-docosahexaenoyl-GPE (16:0/22:6)	5.832249588276988e-14	single	1	Healthy Donor:133,COVID19:254	2.5924502096582005e-13	True
+N-acetyltaurine	7.431893021049069e-14	single	1	Healthy Donor:133,COVID19:254	3.286290195245135e-13	True
+4-hydroxychlorothalonil	9.08550838576993e-14	single	1	Healthy Donor:133,COVID19:254	3.996682186279104e-13	True
+2-palmitoyl-GPC (16:0)	9.630731095854284e-14	single	1	Healthy Donor:133,COVID19:254	4.214685928031076e-13	True
+palmitoyl-arachidonoyl-glycerol (16:0/20:4)	1.2016437524346127e-13	single	1	Healthy Donor:133,COVID19:254	5.231772029830699e-13	True
+1,7-dimethylurate	1.2838240854926062e-13	single	1	Healthy Donor:133,COVID19:254	5.561054329506238e-13	True
+ornithine	1.4409004974068458e-13	single	1	Healthy Donor:133,COVID19:254	6.209769148722904e-13	True
+sphingomyelin (d18:2/21:0, d16:2/23:0)	1.4806049879980906e-13	single	1	Healthy Donor:133,COVID19:254	6.34865472126454e-13	True
+1-palmitoylglycerol (16:0)	1.9806290122150557e-13	single	1	Healthy Donor:133,COVID19:254	8.450020258143629e-13	True
+N-palmitoyl-sphingosine (d18:1/16:0)	2.053684117679482e-13	single	1	Healthy Donor:133,COVID19:254	8.7178890795494e-13	True
+1-docosapentaenoyl-GPC (22:5n3)	2.1942645231263566e-13	single	1	Healthy Donor:133,COVID19:254	9.268311343951627e-13	True
+glycosyl-N-behenoyl-sphingadienine (d18:2/22:0)	2.4402834424616147e-13	single	1	Healthy Donor:133,COVID19:254	1.0256438824999558e-12	True
+myristate (14:0)	2.672758332387806e-13	single	1	Healthy Donor:133,COVID19:254	1.1178186326094814e-12	True
+1-stearoyl-2-docosapentaenoyl-GPE (18:0/22:5n3)	2.786983879438123e-13	single	1	Healthy Donor:133,COVID19:254	1.1592557662681617e-12	True
+1-stearoyl-2-dihomo-linolenoyl-GPI (18:0/20:3n3 or 6)	2.7991452542399666e-13	single	1	Healthy Donor:133,COVID19:254	1.1592557662681617e-12	True
+oleate (18:1)	3.3623945859356754e-13	single	1	Healthy Donor:133,COVID19:254	1.3857635939123245e-12	True
+succinylcarnitine (C4-DC)	3.654274518273221e-13	single	1	Healthy Donor:133,COVID19:254	1.4987821574946688e-12	True
+methionine sulfoxide	3.7169513803901464e-13	single	1	Healthy Donor:133,COVID19:254	1.5171594817073241e-12	True
+1-oleoyl-2-dihomo-linolenoyl-GPC (18:1/20:3)	3.7363899128763825e-13	single	1	Healthy Donor:133,COVID19:254	1.517796667957918e-12	True
+linoleate (18:2n6)	4.4226774303447353e-13	single	1	Healthy Donor:133,COVID19:254	1.7880253039822285e-12	True
+1-carboxyethylisoleucine	5.256449009838124e-13	single	1	Healthy Donor:133,COVID19:254	2.115035644242923e-12	True
+N,N-dimethyl-pro-pro	5.632335797079795e-13	single	1	Healthy Donor:133,COVID19:254	2.255591081000352e-12	True
+pentadecanoate (15:0)	6.621607260437919e-13	single	1	Healthy Donor:133,COVID19:254	2.6393166967661e-12	True
+1-methylxanthine	6.666628466227701e-13	single	1	Healthy Donor:133,COVID19:254	2.6448446578632327e-12	True
+1-(1-enyl-palmitoyl)-GPE (P-16:0)	7.159695971820094e-13	single	1	Healthy Donor:133,COVID19:254	2.827247386081516e-12	True
+2-linoleoyl-GPC (18:2)	1.0324212674284349e-12	single	1	Healthy Donor:133,COVID19:254	4.057989148364543e-12	True
+5-dodecenoylcarnitine (C12:1)	1.0539699584441472e-12	single	1	Healthy Donor:133,COVID19:254	4.123596749857516e-12	True
+N-acetyl-isoputreanine	1.4596999266245315e-12	single	1	Healthy Donor:133,COVID19:254	5.671915251011126e-12	True
+1-(1-enyl-stearoyl)-2-oleoyl-GPC (P-18:0/18:1)	1.463073545313824e-12	single	1	Healthy Donor:133,COVID19:254	5.671915251011126e-12	True
+homoarginine	1.5263088113058183e-12	single	1	Healthy Donor:133,COVID19:254	5.890164458175635e-12	True
+cysteine-glutathione disulfide	1.5895746359959364e-12	single	1	Healthy Donor:133,COVID19:254	6.106555954572624e-12	True
+glycodeoxycholate 3-sulfate	1.6142489453318304e-12	single	1	Healthy Donor:133,COVID19:254	6.173411507147405e-12	True
+linolenate [alpha or gamma; (18:3n3 or 6)]	1.7025909326746704e-12	single	1	Healthy Donor:133,COVID19:254	6.482061443232266e-12	True
+1-palmitoyl-2-eicosapentaenoyl-GPC (16:0/20:5)	1.867498143542474e-12	single	1	Healthy Donor:133,COVID19:254	7.078151445837324e-12	True
+sphingomyelin (d18:1/19:0, d19:1/18:0)	1.978946389598033e-12	single	1	Healthy Donor:133,COVID19:254	7.467224376749911e-12	True
+phenyllactate (PLA)	2.0461773235269857e-12	single	1	Healthy Donor:133,COVID19:254	7.68674578616996e-12	True
+phosphatidylcholine (18:0/20:5, 16:0/22:5n6)	2.3265921366584165e-12	single	1	Healthy Donor:133,COVID19:254	8.701659577193813e-12	True
+spermidine	2.6562636049590365e-12	single	1	Healthy Donor:133,COVID19:254	9.891086844781674e-12	True
+dihomo-linolenoyl-choline	3.263790923076223e-12	single	1	Healthy Donor:133,COVID19:254	1.2100255430968181e-11	True
+pyroglutamylvaline	3.4522583885531624e-12	single	1	Healthy Donor:133,COVID19:254	1.274333639948537e-11	True
+N-acetylalanine	4.132187976078562e-12	single	1	Healthy Donor:133,COVID19:254	1.5187132431561468e-11	True
+2-hydroxydecanoate	4.4456259486075715e-12	single	1	Healthy Donor:133,COVID19:254	1.6268691510206155e-11	True
+phenylalanylphenylalanine	5.616754122936701e-12	single	1	Healthy Donor:133,COVID19:254	2.0466198499456046e-11	True
+orotidine	5.7952043772917e-12	single	1	Healthy Donor:133,COVID19:254	2.102619024068655e-11	True
+cis-4-decenoate (10:1n6)	6.405214044578959e-12	single	1	Healthy Donor:133,COVID19:254	2.3140539250415044e-11	True
+N1-methylinosine	8.152734654908494e-12	single	1	Healthy Donor:133,COVID19:254	2.932911746617505e-11	True
+isobutyrylcarnitine (C4)	1.1172119413687824e-11	single	1	Healthy Donor:133,COVID19:254	4.002164296295765e-11	True
+4-hydroxy-2-oxoglutaric acid	1.2697321431153291e-11	single	1	Healthy Donor:133,COVID19:254	4.5294226449786324e-11	True
+N-acetylthreonine	1.3074806708438413e-11	single	1	Healthy Donor:133,COVID19:254	4.644565228227704e-11	True
+1-linolenoyl-GPC (18:3)	1.4847848614463558e-11	single	1	Healthy Donor:133,COVID19:254	5.252426447366484e-11	True
+1-docosahexaenoyl-GPC (22:6)	1.5728645504148385e-11	single	1	Healthy Donor:133,COVID19:254	5.540921175527792e-11	True
+1-linoleoyl-2-linolenoyl-GPC (18:2/18:3)	1.8597413305395342e-11	single	1	Healthy Donor:133,COVID19:254	6.499516688390806e-11	True
+cystathionine	1.8602856952637994e-11	single	1	Healthy Donor:133,COVID19:254	6.499516688390806e-11	True
+methylsuccinoylcarnitine	1.87445561494878e-11	single	1	Healthy Donor:133,COVID19:254	6.522183676604567e-11	True
+3-(3-amino-3-carboxypropyl)uridine	1.8851823694934554e-11	single	1	Healthy Donor:133,COVID19:254	6.532734006938546e-11	True
+sphingomyelin (d18:1/20:1, d18:2/20:0)	1.992297502051581e-11	single	1	Healthy Donor:133,COVID19:254	6.875856013178017e-11	True
+cis-3,4-methyleneheptanoate	2.2137878912119334e-11	single	1	Healthy Donor:133,COVID19:254	7.609335707040208e-11	True
+1-pentadecanoyl-2-linoleoyl-GPC (15:0/18:2)	2.3397180319443642e-11	single	1	Healthy Donor:133,COVID19:254	8.009760520648246e-11	True
+linoleoyl ethanolamide	2.6121657203183375e-11	single	1	Healthy Donor:133,COVID19:254	8.906540950001079e-11	True
+1-oleoyl-2-linoleoyl-GPE (18:1/18:2)	3.349124453703446e-11	single	1	Healthy Donor:133,COVID19:254	1.1373626644776904e-10	True
+citrulline	3.3776685897828284e-11	single	1	Healthy Donor:133,COVID19:254	1.1424863078588134e-10	True
+theophylline	3.409931244941653e-11	single	1	Healthy Donor:133,COVID19:254	1.1488220741886759e-10	True
+glycochenodeoxycholate glucuronide	3.716958498495343e-11	single	1	Healthy Donor:133,COVID19:254	1.2473113696531802e-10	True
+alpha-tocopherol	3.821787921057193e-11	single	1	Healthy Donor:133,COVID19:254	1.2774401358179358e-10	True
+EDTA	4.239809516381698e-11	single	1	Healthy Donor:133,COVID19:254	1.411607168395318e-10	True
+3-phenylpropionate (hydrocinnamate)	4.3439548131603096e-11	single	1	Healthy Donor:133,COVID19:254	1.4406318892082433e-10	True
+stearoylcarnitine (C18)	4.40334796225716e-11	single	1	Healthy Donor:133,COVID19:254	1.4546468560141357e-10	True
+paraxanthine	5.247243177734072e-11	single	1	Healthy Donor:133,COVID19:254	1.72670909220784e-10	True
+1-stearoyl-2-docosahexaenoyl-GPE (18:0/22:6)	5.458389225790823e-11	single	1	Healthy Donor:133,COVID19:254	1.7892557732418567e-10	True
+androsterone sulfate	5.505349131167845e-11	single	1	Healthy Donor:133,COVID19:254	1.7933900242915185e-10	True
+lignoceroylcarnitine (C24)	5.5132484845710997e-11	single	1	Healthy Donor:133,COVID19:254	1.7933900242915185e-10	True
+cerotoylcarnitine (C26)	6.097988769358551e-11	single	1	Healthy Donor:133,COVID19:254	1.9760276584677138e-10	True
+indolepropionate	6.84464161954262e-11	single	1	Healthy Donor:133,COVID19:254	2.20954400570026e-10	True
+1-pentadecanoyl-2-arachidonoyl-GPC (15:0/20:4)	7.110672812912103e-11	single	1	Healthy Donor:133,COVID19:254	2.286727734152415e-10	True
+cortolone glucuronide	7.45743934051798e-11	single	1	Healthy Donor:133,COVID19:254	2.389194717018779e-10	True
+linoleoylcarnitine (C18:2)	7.765623554975073e-11	single	1	Healthy Donor:133,COVID19:254	2.4785768414187356e-10	True
+1-erucoyl-GPC (22:1)	8.619779631851495e-11	single	1	Healthy Donor:133,COVID19:254	2.7408962200156997e-10	True
+N2,N2-dimethylguanosine	8.999573510427603e-11	single	1	Healthy Donor:133,COVID19:254	2.8509842949078484e-10	True
+tridecenedioate (C13:1-DC)	9.117016341235021e-11	single	1	Healthy Donor:133,COVID19:254	2.877452369408377e-10	True
+propionylcarnitine (C3)	9.374553456231784e-11	single	1	Healthy Donor:133,COVID19:254	2.94777625345955e-10	True
+xanthosine	1.235072681441816e-10	single	1	Healthy Donor:133,COVID19:254	3.865364265765162e-10	True
+1-stearoyl-2-adrenoyl-GPE (18:0/22:4)	1.2383734750154583e-10	single	1	Healthy Donor:133,COVID19:254	3.865364265765162e-10	True
+S-methylcysteine	1.2710020150337656e-10	single	1	Healthy Donor:133,COVID19:254	3.9526765962039083e-10	True
+sphingomyelin (d17:1/16:0, d18:1/15:0, d16:1/17:0)	1.555244735409352e-10	single	1	Healthy Donor:133,COVID19:254	4.81898824949832e-10	True
+palmitoyl-docosahexaenoyl-glycerol (16:0/22:6)	1.7364304617744678e-10	single	1	Healthy Donor:133,COVID19:254	5.360834407441902e-10	True
+stearidonate (18:4n3)	1.7512947644922726e-10	single	1	Healthy Donor:133,COVID19:254	5.381009043398052e-10	True
+1,3-dimethylurate	1.7556413486705067e-10	single	1	Healthy Donor:133,COVID19:254	5.381009043398052e-10	True
+etiocholanolone glucuronide	1.8112920364308e-10	single	1	Healthy Donor:133,COVID19:254	5.531607693991904e-10	True
+behenoylcarnitine (C22)	1.9016785733354466e-10	single	1	Healthy Donor:133,COVID19:254	5.786828346816466e-10	True
+cinnamoylglycine	1.9099985937198962e-10	single	1	Healthy Donor:133,COVID19:254	5.791388593100685e-10	True
+3-hydroxyoctanoate	1.9962060780713384e-10	single	1	Healthy Donor:133,COVID19:254	6.031241851539381e-10	True
+N6-succinyladenosine	2.0165403025782427e-10	single	1	Healthy Donor:133,COVID19:254	6.071073464145135e-10	True
+arachidoylcarnitine (C20)	2.371808992101529e-10	single	1	Healthy Donor:133,COVID19:254	7.115426976304588e-10	True
+1-stearoyl-2-linoleoyl-GPC (18:0/18:2)	2.767902165236768e-10	single	1	Healthy Donor:133,COVID19:254	8.274468092556394e-10	True
+1-stearoyl-2-arachidonoyl-GPC (18:0/20:4)	2.8354002488090925e-10	single	1	Healthy Donor:133,COVID19:254	8.446508109610244e-10	True
+myristoylcarnitine (C14)	2.872488147697862e-10	single	1	Healthy Donor:133,COVID19:254	8.527071459424771e-10	True
+androsterone glucuronide	2.94158500244894e-10	single	1	Healthy Donor:133,COVID19:254	8.701761906199128e-10	True
+mannitol	3.078189964390896e-10	single	1	Healthy Donor:133,COVID19:254	9.074247499193994e-10	True
+N-formylmethionine	3.7260666224260553e-10	single	1	Healthy Donor:133,COVID19:254	1.0946126513632253e-09	True
+behenoyl dihydrosphingomyelin (d18:0/22:0)	5.149975073554745e-10	single	1	Healthy Donor:133,COVID19:254	1.5076995991199927e-09	True
+phenylpyruvate	5.699229474848371e-10	single	1	Healthy Donor:133,COVID19:254	1.6627648880227722e-09	True
+2,3-dihydroxy-5-methylthio-4-pentenoate (DMTPA)	5.912605111229471e-10	single	1	Healthy Donor:133,COVID19:254	1.7191101847376098e-09	True
+N-acetylglucosamine	6.286389747892481e-10	single	1	Healthy Donor:133,COVID19:254	1.8215511590309612e-09	True
+pro-hydroxy-pro	7.305987929058861e-10	single	1	Healthy Donor:133,COVID19:254	2.1097903917588344e-09	True
+1-methyl-5-imidazolelactate	8.39020793777214e-10	single	1	Healthy Donor:133,COVID19:254	2.414673403107982e-09	True
+2-methylbutyrylcarnitine (C5)	8.668349925397063e-10	single	1	Healthy Donor:133,COVID19:254	2.4862936103588196e-09	True
+phosphatidylethanolamine (P-18:1/20:4, P-16:0/22:5n3)	8.729006900971531e-10	single	1	Healthy Donor:133,COVID19:254	2.495261568661559e-09	True
+4-methyl-2-oxopentanoate	9.250156902092061e-10	single	1	Healthy Donor:133,COVID19:254	2.6353634932470333e-09	True
+3-methoxycatechol sulfate	9.63169389043379e-10	single	1	Healthy Donor:133,COVID19:254	2.734885656514477e-09	True
+2-oleoyl-GPC (18:1)	1.0637521119458771e-09	single	1	Healthy Donor:133,COVID19:254	3.010418476806832e-09	True
+7-methylxanthine	1.096850376019648e-09	single	1	Healthy Donor:133,COVID19:254	3.0937739841883096e-09	True
+2-hydroxysebacate	1.1804519044843024e-09	single	1	Healthy Donor:133,COVID19:254	3.318555188434347e-09	True
+laurate (12:0)	1.1991142610770882e-09	single	1	Healthy Donor:133,COVID19:254	3.3598944147011483e-09	True
+sulfate of piperine metabolite C18H21NO3	1.277329983059208e-09	single	1	Healthy Donor:133,COVID19:254	3.5672801171620647e-09	True
+N6-acetyllysine	1.494412085244906e-09	single	1	Healthy Donor:133,COVID19:254	4.15985527991123e-09	True
+1-palmityl-2-arachidonoyl-GPC (O-16:0/20:4)	1.6464754403834653e-09	single	1	Healthy Donor:133,COVID19:254	4.5681622512600066e-09	True
+taurodeoxycholate	1.7080194662618316e-09	single	1	Healthy Donor:133,COVID19:254	4.723480543505847e-09	True
+glycine conjugate of C10H14O2	1.8074388160863728e-09	single	1	Healthy Donor:133,COVID19:254	4.982193359926397e-09	True
+sphinganine	1.9501349974968813e-09	single	1	Healthy Donor:133,COVID19:254	5.358137905743859e-09	True
+1,2-dilinoleoyl-GPE (18:2/18:2)	2.6260455222413492e-09	single	1	Healthy Donor:133,COVID19:254	7.191976285106147e-09	True
+N-(2-furoyl)glycine	2.810613557501939e-09	single	1	Healthy Donor:133,COVID19:254	7.672703891701435e-09	True
+hydroxy-N6,N6,N6-trimethyllysine	2.8410464677615773e-09	single	1	Healthy Donor:133,COVID19:254	7.730924522851216e-09	True
+myo-inositol	3.0948704236814818e-09	single	1	Healthy Donor:133,COVID19:254	8.39471242717437e-09	True
+gamma-glutamylphenylalanine	3.1111859346624103e-09	single	1	Healthy Donor:133,COVID19:254	8.412091906141357e-09	True
+sphingomyelin (d18:0/20:0, d16:0/22:0)	3.856439393522464e-09	single	1	Healthy Donor:133,COVID19:254	1.039402236539864e-08	True
+2-hydroxyoctanoate	3.9345296228121366e-09	single	1	Healthy Donor:133,COVID19:254	1.0570935600530076e-08	True
+N-formylphenylalanine	4.035134581782808e-09	single	1	Healthy Donor:133,COVID19:254	1.0807032365721148e-08	True
+3-formylindole	4.1845142300751536e-09	single	1	Healthy Donor:133,COVID19:254	1.1171863463313853e-08	True
+N4-acetylcytidine	4.816345630664255e-09	single	1	Healthy Donor:133,COVID19:254	1.2818424578162861e-08	True
+galactonate	5.0329746967331326e-09	single	1	Healthy Donor:133,COVID19:254	1.3353110992270093e-08	True
+1-stearoyl-2-dihomo-linolenoyl-GPC (18:0/20:3n3 or 6)	5.117569202998059e-09	single	1	Healthy Donor:133,COVID19:254	1.3535253125686454e-08	True
+glucuronide of piperine metabolite C17H21NO3	5.1472229280874045e-09	aggregate	3	Healthy Donor:133,COVID19:254	1.3571404552627971e-08	True
+tryptophan	5.290675451649602e-09	single	1	Healthy Donor:133,COVID19:254	1.3906450335760098e-08	True
+erythronate	5.30755946563186e-09	single	1	Healthy Donor:133,COVID19:254	1.3907771562720523e-08	True
+fumarate	5.730988569319998e-09	single	1	Healthy Donor:133,COVID19:254	1.497110552416209e-08	True
+1-palmityl-2-stearoyl-GPC (O-16:0/18:0)	5.892498432538688e-09	single	1	Healthy Donor:133,COVID19:254	1.5345801132593085e-08	True
+vanillactate	6.055925811048858e-09	single	1	Healthy Donor:133,COVID19:254	1.5711232974759903e-08	True
+theobromine	6.069828522639869e-09	single	1	Healthy Donor:133,COVID19:254	1.5711232974759903e-08	True
+mannose	6.5954165935273565e-09	single	1	Healthy Donor:133,COVID19:254	1.7019783245911022e-08	True
+1-palmitoleoylglycerol (16:1)	6.644377355820767e-09	single	1	Healthy Donor:133,COVID19:254	1.709417083361161e-08	True
+pregnenediol sulfate (C21H34O5S)	6.894157397642979e-09	single	1	Healthy Donor:133,COVID19:254	1.7683201300902987e-08	True
+5-hydroxyhexanoate	7.925492739406722e-09	single	1	Healthy Donor:133,COVID19:254	2.026729920408526e-08	True
+arabitol	1.0122424145461053e-08	single	1	Healthy Donor:133,COVID19:254	2.580762192040971e-08	True
+2-hydroxy-3-methylvalerate	1.0306313151964587e-08	single	1	Healthy Donor:133,COVID19:254	2.6197784029993812e-08	True
+2,4-di-tert-butylphenol	1.0524413178256808e-08	single	1	Healthy Donor:133,COVID19:254	2.667231877116427e-08	True
+sphingomyelin (d17:2/16:0, d18:2/15:0)	1.1040776996858988e-08	single	1	Healthy Donor:133,COVID19:254	2.7897677590277623e-08	True
+N-acetyltyrosine	1.1645179723707938e-08	single	1	Healthy Donor:133,COVID19:254	2.9337559600676676e-08	True
+dimethylarginine (SDMA + ADMA)	1.1738901882688424e-08	single	1	Healthy Donor:133,COVID19:254	2.948617662249252e-08	True
+10-heptadecenoate (17:1n7)	1.1824105537853053e-08	single	1	Healthy Donor:133,COVID19:254	2.9573388330668988e-08	True
+glycodeoxycholate	1.1843288612988759e-08	single	1	Healthy Donor:133,COVID19:254	2.9573388330668988e-08	True
+1-methyl-4-imidazoleacetate	1.1947431232191134e-08	single	1	Healthy Donor:133,COVID19:254	2.974595048718555e-08	True
+4-allylphenol sulfate	1.2902942467786971e-08	single	1	Healthy Donor:133,COVID19:254	3.203098875775187e-08	True
+taurodeoxycholic acid 3-sulfate	1.4292122649405873e-08	single	1	Healthy Donor:133,COVID19:254	3.537612865698422e-08	True
+1-(1-enyl-stearoyl)-2-dihomo-linolenoyl-GPE (P-18:0/20:3)	1.4737897433095084e-08	single	1	Healthy Donor:133,COVID19:254	3.637347360667944e-08	True
+isoleucine	1.5108908757627287e-08	single	1	Healthy Donor:133,COVID19:254	3.7181053725291497e-08	True
+N-acetylglucosaminylasparagine	1.5566236678233824e-08	single	1	Healthy Donor:133,COVID19:254	3.819576572202461e-08	True
+palmitoleate (16:1n7)	1.581264696503189e-08	single	1	Healthy Donor:133,COVID19:254	3.868858003836333e-08	True
+uracil	1.6592776296915273e-08	single	1	Healthy Donor:133,COVID19:254	4.048065251747433e-08	True
+gulonate	2.138481590585724e-08	single	1	Healthy Donor:133,COVID19:254	5.2022087977285954e-08	True
+dihomo-linolenoylcarnitine (C20:3n3 or 6)	2.1743322845821103e-08	single	1	Healthy Donor:133,COVID19:254	5.2743088846006045e-08	True
+thymol sulfate	2.331102248280171e-08	single	1	Healthy Donor:133,COVID19:254	5.6384780877204136e-08	True
+oleoylcarnitine (C18:1)	2.4894876550547393e-08	single	1	Healthy Donor:133,COVID19:254	5.997898364254695e-08	True
+isovalerylglycine	2.4938258216512458e-08	single	1	Healthy Donor:133,COVID19:254	5.997898364254695e-08	True
+hexadecanedioate (C16-DC)	2.5743604142146808e-08	single	1	Healthy Donor:133,COVID19:254	6.174101671379276e-08	True
+ribonate	2.637473172525079e-08	single	1	Healthy Donor:133,COVID19:254	6.30764710837688e-08	True
+ceramide (d18:1/14:0, d16:1/16:0)	2.952919008629324e-08	single	1	Healthy Donor:133,COVID19:254	7.042214152601956e-08	True
+palmitoyl ethanolamide	3.063164424298059e-08	single	1	Healthy Donor:133,COVID19:254	7.284668336776056e-08	True
+isobutyrylglycine	3.189418015495547e-08	single	1	Healthy Donor:133,COVID19:254	7.5637315507143e-08	True
+1-margaroyl-2-linoleoyl-GPC (17:0/18:2)	3.472681632494097e-08	single	1	Healthy Donor:133,COVID19:254	8.21255349857239e-08	True
+2-aminoheptanoate	3.50193102374119e-08	single	1	Healthy Donor:133,COVID19:254	8.258720664322972e-08	True
+3-carboxy-4-methyl-5-propyl-2-furanpropanoate (CMPF)	3.896809427766612e-08	single	1	Healthy Donor:133,COVID19:254	9.164518571118708e-08	True
+androstenediol (3beta,17beta) monosulfate	4.179071930553206e-08	aggregate	2	Healthy Donor:133,COVID19:254	9.801193560883073e-08	True
+eicosenedioate (C20:1-DC)	4.342037429787071e-08	single	1	Healthy Donor:133,COVID19:254	1.0155343740741662e-07	True
+2-linoleoylglycerol (18:2)	4.418868664041359e-08	single	1	Healthy Donor:133,COVID19:254	1.0306646966404159e-07	True
+dihydroorotate	4.5237347345339976e-08	single	1	Healthy Donor:133,COVID19:254	1.0522330930464011e-07	True
+2-arachidonoyl-GPC (20:4)	4.5743647159503556e-08	single	1	Healthy Donor:133,COVID19:254	1.0611026349294677e-07	True
+sulfate of piperine metabolite C16H19NO3	4.900545443467333e-08	aggregate	2	Healthy Donor:133,COVID19:254	1.1336684145786827e-07	True
+sphingomyelin (d18:1/17:0, d17:1/18:0, d19:1/16:0)	5.093983720398709e-08	single	1	Healthy Donor:133,COVID19:254	1.1752152659289412e-07	True
+3-methylxanthine	5.138697633180685e-08	single	1	Healthy Donor:133,COVID19:254	1.1823182359269381e-07	True
+1-stearyl-2-arachidonoyl-GPC (O-18:0/20:4)	6.858339660242773e-08	single	1	Healthy Donor:133,COVID19:254	1.5737109112286795e-07	True
+flavin adenine dinucleotide (FAD)	7.092184878331531e-08	single	1	Healthy Donor:133,COVID19:254	1.6229824694618518e-07	True
+palmitoleoylcarnitine (C16:1)	7.198671354683008e-08	single	1	Healthy Donor:133,COVID19:254	1.6429225753026542e-07	True
+asparagine	8.25282115670323e-08	single	1	Healthy Donor:133,COVID19:254	1.8784571480002793e-07	True
+3-hydroxyisobutyrate	9.264914759490662e-08	single	1	Healthy Donor:133,COVID19:254	2.098238662529804e-07	True
+palmitoyl-linoleoyl-glycerol (16:0/18:2)	9.29017526950515e-08	aggregate	2	Healthy Donor:133,COVID19:254	2.098238662529804e-07	True
+1-palmitoyl-2-stearoyl-GPC (16:0/18:0)	9.292552851722099e-08	single	1	Healthy Donor:133,COVID19:254	2.098238662529804e-07	True
+5-acetylamino-6-amino-3-methyluracil	9.514010267505506e-08	single	1	Healthy Donor:133,COVID19:254	2.142545017801638e-07	True
+2-methylcitrate	1.1321596069048891e-07	single	1	Healthy Donor:133,COVID19:254	2.5428664186832034e-07	True
+arachidonoylcarnitine (C20:4)	1.2567690786370428e-07	single	1	Healthy Donor:133,COVID19:254	2.8152953766829795e-07	True
+sphingomyelin (d18:2/16:0, d18:1/16:1)	1.395881029406901e-07	single	1	Healthy Donor:133,COVID19:254	3.1186920893854187e-07	True
+homostachydrine	1.5072857694107809e-07	single	1	Healthy Donor:133,COVID19:254	3.358754903490165e-07	True
+myristoyl-linoleoyl-glycerol (14:0/18:2)	1.543052161011774e-07	single	1	Healthy Donor:133,COVID19:254	3.429453624866482e-07	True
+alpha-ketoglutarate	1.5553011703917736e-07	single	1	Healthy Donor:133,COVID19:254	3.447651941677848e-07	True
+hexanoylglutamine	1.5720607968966387e-07	single	1	Healthy Donor:133,COVID19:254	3.4743230219129495e-07	True
+linolenoylcarnitine (C18:3)	1.5755175069923269e-07	single	1	Healthy Donor:133,COVID19:254	3.4743230219129495e-07	True
+pseudouridine	1.8544358692236714e-07	single	1	Healthy Donor:133,COVID19:254	4.078798064691443e-07	True
+hydroxypalmitoyl sphingomyelin (d18:1/16:0(OH))	1.862504447994793e-07	single	1	Healthy Donor:133,COVID19:254	4.0859593704071817e-07	True
+4-hydroxyphenylacetylglutamine	2.145146415887614e-07	single	1	Healthy Donor:133,COVID19:254	4.693889966723155e-07	True
+glycerate	2.1697428484347752e-07	single	1	Healthy Donor:133,COVID19:254	4.7355055997972343e-07	True
+1-stearoyl-2-dihomo-linolenoyl-GPE (18:0/20:3n3 or 6)	2.2163595141397657e-07	single	1	Healthy Donor:133,COVID19:254	4.824844173088875e-07	True
+catechol sulfate	2.2393082112491373e-07	single	1	Healthy Donor:133,COVID19:254	4.86233419782741e-07	True
+octadecenedioylcarnitine (C18:1-DC)	2.3050579258576773e-07	single	1	Healthy Donor:133,COVID19:254	4.992332089421347e-07	True
+eicosenoylcarnitine (C20:1)	2.333976451748178e-07	single	1	Healthy Donor:133,COVID19:254	5.042101800341484e-07	True
+palmitoyl-sphingosine-phosphoethanolamine (d18:1/16:0)	2.358704090756483e-07	single	1	Healthy Donor:133,COVID19:254	5.082588256477802e-07	True
+16a-hydroxy DHEA 3-sulfate	2.8521301771246174e-07	single	1	Healthy Donor:133,COVID19:254	6.130274735136204e-07	True
+proline	2.9891368931716096e-07	single	1	Healthy Donor:133,COVID19:254	6.408528339148223e-07	True
+taurine	3.68328984265228e-07	single	1	Healthy Donor:133,COVID19:254	7.86851768546168e-07	True
+glutarate (C5-DC)	3.688657289533273e-07	single	1	Healthy Donor:133,COVID19:254	7.86851768546168e-07	True
+orotate	3.8176714830728374e-07	single	1	Healthy Donor:133,COVID19:254	8.123316012854233e-07	True
+urate	4.08064039228004e-07	single	1	Healthy Donor:133,COVID19:254	8.661159232614385e-07	True
+1-stearoyl-2-docosapentaenoyl-GPE (18:0/22:5n6)	4.6298482782176963e-07	single	1	Healthy Donor:133,COVID19:254	9.80234710276016e-07	True
+9,10-DiHOME	5.097528938551857e-07	single	1	Healthy Donor:133,COVID19:254	1.076567678813564e-06	True
+N6,N6,N6-trimethyllysine	5.203882112514846e-07	single	1	Healthy Donor:133,COVID19:254	1.0963017155149143e-06	True
+N-acetylglutamine	5.58041301967576e-07	single	1	Healthy Donor:133,COVID19:254	1.1727155083427525e-06	True
+N-behenoyl-sphingadienine (d18:2/22:0)	5.832583360841184e-07	single	1	Healthy Donor:133,COVID19:254	1.2226822897170777e-06	True
+3-methyl-2-oxobutyrate	5.86425931513868e-07	single	1	Healthy Donor:133,COVID19:254	1.2262946203331872e-06	True
+pyroglutamylleucine	6.14150185806665e-07	single	1	Healthy Donor:133,COVID19:254	1.281114269655672e-06	True
+pyruvate	6.967999993262636e-07	single	1	Healthy Donor:133,COVID19:254	1.4499588221274456e-06	True
+palmitoylcarnitine (C16)	8.317629423318757e-07	single	1	Healthy Donor:133,COVID19:254	1.726569041662011e-06	True
+alpha-ketobutyrate	9.016140720440935e-07	single	1	Healthy Donor:133,COVID19:254	1.8670008467449642e-06	True
+palmitate (16:0)	9.431813384989235e-07	single	1	Healthy Donor:133,COVID19:254	1.9483234948554405e-06	True
+alpha-hydroxyisovalerate	9.696314660196615e-07	single	1	Healthy Donor:133,COVID19:254	1.998099792841487e-06	True
+cyclo(pro-val)	9.77514987909545e-07	single	1	Healthy Donor:133,COVID19:254	2.009467856501704e-06	True
+3-methylhistidine	1.0360581504334625e-06	single	1	Healthy Donor:133,COVID19:254	2.124669975164274e-06	True
+gamma-glutamylhistidine	1.0570297432022382e-06	single	1	Healthy Donor:133,COVID19:254	2.162453619225784e-06	True
+gamma-glutamylglycine	1.1902352887661582e-06	single	1	Healthy Donor:133,COVID19:254	2.4291100003905487e-06	True
+docosapentaenoate (n6 DPA; 22:5n6)	1.2159450643494412e-06	single	1	Healthy Donor:133,COVID19:254	2.475629159790589e-06	True
+malate	1.230147330186964e-06	single	1	Healthy Donor:133,COVID19:254	2.498552830929982e-06	True
+branched chain 14:0 dicarboxylic acid	1.3390337062590046e-06	single	1	Healthy Donor:133,COVID19:254	2.7132210420379352e-06	True
+creatine	1.8027145853771715e-06	single	1	Healthy Donor:133,COVID19:254	3.644058769012425e-06	True
+10-nonadecenoate (19:1n9)	1.8677910367333332e-06	single	1	Healthy Donor:133,COVID19:254	3.7666379814408545e-06	True
+1-(1-enyl-stearoyl)-2-docosahexaenoyl-GPE (P-18:0/22:6)	1.917306921395754e-06	single	1	Healthy Donor:133,COVID19:254	3.857330749443117e-06	True
+1-adrenoyl-GPC (22:4)	1.963571191829009e-06	single	1	Healthy Donor:133,COVID19:254	3.9410684204795e-06	True
+1-palmitoleoyl-2-linolenoyl-GPC (16:1/18:3)	2.0036883491528437e-06	single	1	Healthy Donor:133,COVID19:254	4.012102378374444e-06	True
+1-oleoylglycerol (18:1)	2.126610667037595e-06	single	1	Healthy Donor:133,COVID19:254	4.238615554814677e-06	True
+1-palmitoyl-2-docosahexaenoyl-GPC (16:0/22:6)	2.1267964974688484e-06	single	1	Healthy Donor:133,COVID19:254	4.238615554814677e-06	True
+glycoursodeoxycholate	2.1948532957347406e-06	single	1	Healthy Donor:133,COVID19:254	4.362965407235688e-06	True
+dihomo-linoleate (20:2n6)	2.1994690156618074e-06	single	1	Healthy Donor:133,COVID19:254	4.362965407235688e-06	True
+cortisone	2.2903852661731893e-06	single	1	Healthy Donor:133,COVID19:254	4.532720491797291e-06	True
+linoleoyl-linoleoyl-glycerol (18:2/18:2)	2.3599797600628e-06	single	1	Healthy Donor:133,COVID19:254	4.651499331444621e-06	True
+2-hydroxybutyrate	2.364933104178023e-06	single	1	Healthy Donor:133,COVID19:254	4.651499331444621e-06	True
+4-methylcatechol sulfate	2.366840649215637e-06	single	1	Healthy Donor:133,COVID19:254	4.651499331444621e-06	True
+margaroylcarnitine (C17)	2.385885288105843e-06	single	1	Healthy Donor:133,COVID19:254	4.6780984055470225e-06	True
+perfluorooctanesulfonate (PFOS)	2.4652480802464413e-06	single	1	Healthy Donor:133,COVID19:254	4.822570553293154e-06	True
+margarate (17:0)	2.5342082161922426e-06	single	1	Healthy Donor:133,COVID19:254	4.94607534608555e-06	True
+glutamate	2.90939222937031e-06	single	1	Healthy Donor:133,COVID19:254	5.6653073457233785e-06	True
+glycohyocholate	2.9480274511841963e-06	single	1	Healthy Donor:133,COVID19:254	5.7274034463509906e-06	True
+glycerophosphorylcholine (GPC)	3.1718435828209056e-06	single	1	Healthy Donor:133,COVID19:254	6.148162561221344e-06	True
+3beta-hydroxy-5-cholestenoate	3.407695425247147e-06	single	1	Healthy Donor:133,COVID19:254	6.590281129919881e-06	True
+2-hydroxystearate	3.4232471706593926e-06	single	1	Healthy Donor:133,COVID19:254	6.605311017931418e-06	True
+prolylglycine	3.4553081057610064e-06	single	1	Healthy Donor:133,COVID19:254	6.65205574102289e-06	True
+branched-chain, straight-chain, or cyclopropyl 10:1 fatty acid	4.518228331849824e-06	single	1	Healthy Donor:133,COVID19:254	8.678678402127828e-06	True
+glutamate, gamma-methyl ester	4.555096858137387e-06	single	1	Healthy Donor:133,COVID19:254	8.729745445956301e-06	True
+ceramide (d18:2/24:1, d18:1/24:2)	4.900627134935812e-06	single	1	Healthy Donor:133,COVID19:254	9.370793778289423e-06	True
+palmitoleoyl-linoleoyl-glycerol (16:1/18:2)	5.1095308690267154e-06	single	1	Healthy Donor:133,COVID19:254	9.748295972592543e-06	True
+dihomo-linoleoylcarnitine (C20:2)	5.158612902911007e-06	single	1	Healthy Donor:133,COVID19:254	9.819870750160191e-06	True
+cysteinylglycine	5.192112663242422e-06	single	1	Healthy Donor:133,COVID19:254	9.8615294207893e-06	True
+indolin-2-one	5.20679229850602e-06	single	1	Healthy Donor:133,COVID19:254	9.867336297838417e-06	True
+N-acetylcarnosine	5.315128560604405e-06	single	1	Healthy Donor:133,COVID19:254	1.0050209683637283e-05	True
+phosphatidylcholine (18:0/20:2, 20:0/18:2)	5.650735637323429e-06	single	1	Healthy Donor:133,COVID19:254	1.0661054569083535e-05	True
+gamma-tocopherol	5.695169425903232e-06	single	1	Healthy Donor:133,COVID19:254	1.0721061735236905e-05	True
+2-aminophenol sulfate	5.779295447462513e-06	single	1	Healthy Donor:133,COVID19:254	1.0855358041804587e-05	True
+palmitoyl dihydrosphingomyelin (d18:0/16:0)	8.373720558890493e-06	single	1	Healthy Donor:133,COVID19:254	1.5693794160039797e-05	True
+linoleoyl-arachidonoyl-glycerol (18:2/20:4)	8.829914511262929e-06	single	1	Healthy Donor:133,COVID19:254	1.6512329119079795e-05	True
+acisoga	8.967364686299761e-06	single	1	Healthy Donor:133,COVID19:254	1.673251124982087e-05	True
+choline	9.486909313030989e-06	single	1	Healthy Donor:133,COVID19:254	1.7663127207814273e-05	True
+4-hydroxyphenylacetate	9.536955148634137e-06	single	1	Healthy Donor:133,COVID19:254	1.77174505934144e-05	True
+1-eicosapentaenoyl-GPE (20:5)	9.691783498028323e-06	single	1	Healthy Donor:133,COVID19:254	1.7965773340231545e-05	True
+4-allylcatechol sulfate	9.937660230624481e-06	single	1	Healthy Donor:133,COVID19:254	1.8381423825272735e-05	True
+methionine	1.131167152126449e-05	single	1	Healthy Donor:133,COVID19:254	2.087741113381207e-05	True
+octadecenedioate (C18:1-DC)	1.1344622834941782e-05	single	1	Healthy Donor:133,COVID19:254	2.0892808648298424e-05	True
+3-(3-hydroxyphenyl)propionate	1.145491182456951e-05	single	1	Healthy Donor:133,COVID19:254	2.1050260041254358e-05	True
+gluconate	1.3388090334209152e-05	single	1	Healthy Donor:133,COVID19:254	2.4549651606357604e-05	True
+isoleucylglycine	1.5080482267776073e-05	single	1	Healthy Donor:133,COVID19:254	2.759338242530579e-05	True
+docosahexaenoylcholine	1.6025945812593148e-05	single	1	Healthy Donor:133,COVID19:254	2.926027525783136e-05	True
+1-stearyl-2-docosapentaenoyl-GPC (O-18:0/22:5n3)	1.8161199336931233e-05	single	1	Healthy Donor:133,COVID19:254	3.308767862028888e-05	True
+tryptophylleucine	1.8445255740688152e-05	single	1	Healthy Donor:133,COVID19:254	3.353323795255726e-05	True
+1-palmityl-2-palmitoyl-GPC (O-16:0/16:0)	1.8670865935946906e-05	single	1	Healthy Donor:133,COVID19:254	3.38708657684165e-05	True
+3-hydroxyhippurate	1.938993269689314e-05	single	1	Healthy Donor:133,COVID19:254	3.5100325926785235e-05	True
+isovalerylcarnitine (C5)	1.9635228437685147e-05	single	1	Healthy Donor:133,COVID19:254	3.546874243318019e-05	True
+5alpha-androstan-3beta,17beta-diol disulfate	2.0271106324266638e-05	single	1	Healthy Donor:133,COVID19:254	3.653963751444242e-05	True
+trans-3,4-methyleneheptanoate	2.2013254476490286e-05	single	1	Healthy Donor:133,COVID19:254	3.959587510707681e-05	True
+glucose	2.447767411204998e-05	single	1	Healthy Donor:133,COVID19:254	4.393561378674511e-05	True
+glycine conjugate of C10H12O2	2.5585174454646828e-05	single	1	Healthy Donor:133,COVID19:254	4.5826609940918056e-05	True
+caprylate (8:0)	3.067537986695971e-05	single	1	Healthy Donor:133,COVID19:254	5.4828205277997465e-05	True
+andro steroid monosulfate C19H28O6S	3.338801610850329e-05	single	1	Healthy Donor:133,COVID19:254	5.955131444562877e-05	True
+adenosine 5'-monophosphate (AMP)	3.353593394926953e-05	single	1	Healthy Donor:133,COVID19:254	5.968974407322815e-05	True
+cis-3,4-methyleneheptanoylglycine	3.362649841090327e-05	single	1	Healthy Donor:133,COVID19:254	5.972572625702275e-05	True
+stearoyl-arachidonoyl-glycerol (18:0/20:4)	3.638854076333584e-05	aggregate	2	Healthy Donor:133,COVID19:254	6.449011643264933e-05	True
+hydroxy-CMPF	3.646084321280528e-05	single	1	Healthy Donor:133,COVID19:254	6.449011643264933e-05	True
+p-cresol sulfate	4.677260504827478e-05	single	1	Healthy Donor:133,COVID19:254	8.255705132221474e-05	True
+N-delta-acetylornithine	4.792866022522155e-05	single	1	Healthy Donor:133,COVID19:254	8.442205919338816e-05	True
+1-linoleoylglycerol (18:2)	4.9030568215836914e-05	single	1	Healthy Donor:133,COVID19:254	8.618416649119159e-05	True
+stearate (18:0)	5.260618715428592e-05	single	1	Healthy Donor:133,COVID19:254	9.227820845865443e-05	True
+5,6-dihydrouridine	5.456677442125305e-05	single	1	Healthy Donor:133,COVID19:254	9.551998244050276e-05	True
+1-methyl-5-imidazoleacetate	5.61455109764993e-05	single	1	Healthy Donor:133,COVID19:254	9.808135559474878e-05	True
+beta-alanine	5.8312472521857566e-05	single	1	Healthy Donor:133,COVID19:254	0.00010165767796931638	True
+gamma-glutamyl-epsilon-lysine	6.152119906119333e-05	single	1	Healthy Donor:133,COVID19:254	0.00010703175820277284	True
+1-palmitoyl-2-eicosapentaenoyl-GPE (16:0/20:5)	6.432741176744575e-05	single	1	Healthy Donor:133,COVID19:254	0.00011168501552262054	True
+trigonelline (N'-methylnicotinate)	6.805184388719701e-05	single	1	Healthy Donor:133,COVID19:254	0.00011791023563312299	True
+1-palmitoyl-GPG (16:0)	7.283170616120906e-05	single	1	Healthy Donor:133,COVID19:254	0.00012593506829097046	True
+glycocholenate sulfate	7.308911211533899e-05	single	1	Healthy Donor:133,COVID19:254	0.0001261232849307374	True
+(R)-3-hydroxybutyrylcarnitine	7.935064118974327e-05	single	1	Healthy Donor:133,COVID19:254	0.00013665049567969988	True
+histidine	8.384060648145728e-05	single	1	Healthy Donor:133,COVID19:254	0.00014409043502582435	True
+alliin	8.546802892785222e-05	single	1	Healthy Donor:133,COVID19:254	0.00014659061931261924	True
+urea	9.004748097783964e-05	single	1	Healthy Donor:133,COVID19:254	0.0001541336922382779	True
+S-adenosylhomocysteine (SAH)	9.330441964620814e-05	single	1	Healthy Donor:133,COVID19:254	0.00015938722792682234	True
+androstenediol (3beta,17beta) disulfate	9.578646431334699e-05	aggregate	2	Healthy Donor:133,COVID19:254	0.000163298610847453	True
+dopamine 3-O-sulfate	9.731122771622948e-05	single	1	Healthy Donor:133,COVID19:254	0.00016556559585386538	True
+1-palmitoyl-2-arachidonoyl-GPC (16:0/20:4n6)	0.00010094024169352052	single	1	Healthy Donor:133,COVID19:254	0.00017139653039559787	True
+3-indoxyl sulfate	0.00010252606713639466	single	1	Healthy Donor:133,COVID19:254	0.0001737417784407167	True
+3-hydroxysebacate	0.00010285187361181511	single	1	Healthy Donor:133,COVID19:254	0.00017394669461440445	True
+oxalate (ethanedioate)	0.00010505792829456316	single	1	Healthy Donor:133,COVID19:254	0.00017732441574967023	True
+ximenoylcarnitine (C26:1)	0.00010718496514092639	single	1	Healthy Donor:133,COVID19:254	0.00018055562580287005	True
+16-hydroxypalmitate	0.00011066455011766371	single	1	Healthy Donor:133,COVID19:254	0.00018604792683147819	True
+glycerol 3-phosphate	0.000114202563992188	single	1	Healthy Donor:133,COVID19:254	0.00019161655499875022	True
+eicosenoate (20:1)	0.0001214990475677668	single	1	Healthy Donor:133,COVID19:254	0.00020345698498034322	True
+tetradecadienedioate (C14:2-DC)	0.00012388172694010477	single	1	Healthy Donor:133,COVID19:254	0.00020703855545698612	True
+9-hydroxystearate	0.00012883867699926702	single	1	Healthy Donor:133,COVID19:254	0.00021489987578070274	True
+oleoyl-arachidonoyl-glycerol (18:1/20:4)	0.00013150094608602771	aggregate	2	Healthy Donor:133,COVID19:254	0.00021885913419414905	True
+sphingomyelin (d18:1/24:1, d18:2/24:0)	0.00013172793589306261	single	1	Healthy Donor:133,COVID19:254	0.00021885913419414905	True
+nonadecanoate (19:0)	0.00013307542914470555	single	1	Healthy Donor:133,COVID19:254	0.00022066609246846683	True
+propionylglycine	0.00013351949844786642	single	1	Healthy Donor:133,COVID19:254	0.00022097086585231695	True
+2-oxoarginine	0.00014619992590930492	single	1	Healthy Donor:133,COVID19:254	0.00024148586983852117	True
+carboxyethyl-GABA	0.00014920568371324766	single	1	Healthy Donor:133,COVID19:254	0.0002459720882962083	True
+1-margaroyl-2-arachidonoyl-GPC (17:0/20:4)	0.00017617358963250817	single	1	Healthy Donor:133,COVID19:254	0.0002898670108488361	True
+1-stearoyl-2-docosapentaenoyl-GPC (18:0/22:5n3)	0.00022656775280651426	single	1	Healthy Donor:133,COVID19:254	0.00037206193836118105	True
+gamma-glutamylmethionine	0.00023999908370619293	single	1	Healthy Donor:133,COVID19:254	0.0003933575715570614	True
+ceramide (d18:1/20:0, d16:1/22:0, d20:1/18:0)	0.00025193844146054667	single	1	Healthy Donor:133,COVID19:254	0.00041213051406551853	True
+lactate	0.0002662907037056573	single	1	Healthy Donor:133,COVID19:254	0.00043477078355019815	True
+phosphatidylcholine (14:0/14:0, 16:0/12:0)	0.0003279573920310848	single	1	Healthy Donor:133,COVID19:254	0.0005344257693558369	True
+(16 or 17)-methylstearate (a19:0 or i19:0)	0.00032936527589687867	single	1	Healthy Donor:133,COVID19:254	0.0005354754796660124	True
+indoleacetate	0.00032986298688495233	single	1	Healthy Donor:133,COVID19:254	0.0005354754796660124	True
+glycerol	0.00035969835786758375	single	1	Healthy Donor:133,COVID19:254	0.0005827937134152264	True
+suberate (C8-DC)	0.00038433983025424885	single	1	Healthy Donor:133,COVID19:254	0.0006215324112111568	True
+benzoate	0.00040305580657979106	single	1	Healthy Donor:133,COVID19:254	0.000650559657388294	True
+cholesterol	0.0004109525090889721	single	1	Healthy Donor:133,COVID19:254	0.0006620468315304314	True
+2,3-dihydroxy-2-methylbutyrate	0.00041326931400043125	single	1	Healthy Donor:133,COVID19:254	0.0006645182719438753	True
+beta-cryptoxanthin	0.00042644431809289013	single	1	Healthy Donor:133,COVID19:254	0.0006844068545573984	True
+N-acetyltryptophan	0.0004585186768768191	single	1	Healthy Donor:133,COVID19:254	0.0007344950125819235	True
+methyl-4-hydroxybenzoate sulfate	0.0004724080758658671	single	1	Healthy Donor:133,COVID19:254	0.0007553191269493808	True
+quinate	0.0004967026304976686	single	1	Healthy Donor:133,COVID19:254	0.0007926701753618809	True
+4-ethylphenylsulfate	0.0004982403879183756	single	1	Healthy Donor:133,COVID19:254	0.0007936324377911837	True
+erythritol	0.0005249243087890973	single	1	Healthy Donor:133,COVID19:254	0.0008345706707152502	True
+hexadecenedioate (C16:1-DC)	0.000542252792062813	single	1	Healthy Donor:133,COVID19:254	0.0008605095709557537	True
+N-palmitoylglycine	0.000561889556844504	single	1	Healthy Donor:133,COVID19:254	0.0008900078988078057	True
+caproate (6:0)	0.0006889897014549128	single	1	Healthy Donor:133,COVID19:254	0.0010892965671046944	True
+1-(1-enyl-stearoyl)-2-oleoyl-GPE (P-18:0/18:1)	0.0007157370954956568	single	1	Healthy Donor:133,COVID19:254	0.0011294810298806926	True
+glycosyl-N-stearoyl-sphingosine (d18:1/18:0)	0.0007179156012610035	single	1	Healthy Donor:133,COVID19:254	0.0011308169674779072	True
+pyridoxate	0.0007680654316421903	single	1	Healthy Donor:133,COVID19:254	0.0012068134915058785	True
+pyridoxal	0.0007690060057770086	single	1	Healthy Donor:133,COVID19:254	0.0012068134915058785	True
+ascorbic acid 3-sulfate	0.000784960115543489	single	1	Healthy Donor:133,COVID19:254	0.0012295777455653546	True
+ectoine	0.0007952616754849062	single	1	Healthy Donor:133,COVID19:254	0.0012434201887415936	True
+N-acetyl-aspartyl-glutamate (NAAG)	0.0008440899749508899	single	1	Healthy Donor:133,COVID19:254	0.0013173389498773998	True
+1,3,7-trimethylurate	0.000858822369159055	single	1	Healthy Donor:133,COVID19:254	0.0013378719108551149	True
+(S)-3-hydroxybutyrylcarnitine	0.0008608143539781736	single	1	Healthy Donor:133,COVID19:254	0.001338519022944083	True
+cytosine	0.0008950246124598998	single	1	Healthy Donor:133,COVID19:254	0.001389169828114177	True
+3-amino-2-piperidone	0.0009317636762958018	single	1	Healthy Donor:133,COVID19:254	0.0014435535787867438	True
+17alpha-hydroxypregnanolone glucuronide	0.0010255207019800416	single	1	Healthy Donor:133,COVID19:254	0.0015859145281986436	True
+6-hydroxyindole sulfate	0.0011280224537322404	single	1	Healthy Donor:133,COVID19:254	0.0017412564785794036	True
+1-stearoyl-2-arachidonoyl-GPI (18:0/20:4)	0.0011568325437605893	single	1	Healthy Donor:133,COVID19:254	0.0017824878941066068	True
+N-methylproline	0.001161121227297118	single	1	Healthy Donor:133,COVID19:254	0.0017858549311145892	True
+adrenate (22:4n6)	0.0011925209306807045	single	1	Healthy Donor:133,COVID19:254	0.001830832314914861	True
+stearoylcholine	0.001262869695594508	single	1	Healthy Donor:133,COVID19:254	0.0019353364107576486	True
+1-stearoyl-2-oleoyl-GPI (18:0/18:1)	0.0013205924582710595	single	1	Healthy Donor:133,COVID19:254	0.0020201495442741073	True
+N-acetylputrescine	0.0013688101525751598	single	1	Healthy Donor:133,COVID19:254	0.0020901435603171057	True
+gamma-glutamylcitrulline	0.001390734579627461	single	1	Healthy Donor:133,COVID19:254	0.002119809080976148	True
+gamma-glutamyltyrosine	0.0015302103167078337	single	1	Healthy Donor:133,COVID19:254	0.0023282232238081555	True
+trans-urocanate	0.0015454558540936643	single	1	Healthy Donor:133,COVID19:254	0.0023472129161458337	True
+3-indoleglyoxylic acid	0.001587260894110275	single	1	Healthy Donor:133,COVID19:254	0.0024064008912493278	True
+4-cholesten-3-one	0.00176171357686088	single	1	Healthy Donor:133,COVID19:254	0.0026661226858375885	True
+leucine	0.0017670009189638567	single	1	Healthy Donor:133,COVID19:254	0.002669366156940061	True
+4-acetamidobutanoate	0.001839978175275408	single	1	Healthy Donor:133,COVID19:254	0.002774674015646219	True
+gamma-CEHC	0.0018810575287718117	single	1	Healthy Donor:133,COVID19:254	0.0028315919183107595	True
+stachydrine	0.002008352323618494	single	1	Healthy Donor:133,COVID19:254	0.003017860394251507	True
+1-methylnicotinamide	0.002211385146980632	single	1	Healthy Donor:133,COVID19:254	0.003317077720470948	True
+pipecolate	0.0022537538073628257	single	1	Healthy Donor:133,COVID19:254	0.003374668399384549	True
+1-linoleoyl-GPE (18:2)	0.002504157291931032	single	1	Healthy Donor:133,COVID19:254	0.003743009755016631	True
+gamma-glutamylglutamine	0.0025449399556848524	single	1	Healthy Donor:133,COVID19:254	0.003797282991874235	True
+glycine	0.0027167089883282244	single	1	Healthy Donor:133,COVID19:254	0.004046466545773092	True
+oxindolylalanine	0.0028485050064137444	single	1	Healthy Donor:133,COVID19:254	0.004235342820394517	True
+1-arachidonoyl-GPI (20:4)	0.003317649083354776	single	1	Healthy Donor:133,COVID19:254	0.004924272852741616	True
+homocitrulline	0.0036142878350764636	single	1	Healthy Donor:133,COVID19:254	0.0053552013472598905	True
+N-acetylalliin	0.0036728339828850597	single	1	Healthy Donor:133,COVID19:254	0.005432466988622675	True
+kynurenate	0.003887856364162647	single	1	Healthy Donor:133,COVID19:254	0.00574050444030276	True
+1-(1-enyl-stearoyl)-2-arachidonoyl-GPE (P-18:0/20:4)	0.003941332539357573	single	1	Healthy Donor:133,COVID19:254	0.005809359940823922	True
+glyco-beta-muricholate	0.004247809277395566	single	1	Healthy Donor:133,COVID19:254	0.006250242766913059	True
+(S)-a-amino-omega-caprolactam	0.004390813849627619	single	1	Healthy Donor:133,COVID19:254	0.00644948262687517	True
+5-oxoproline	0.004482675215446759	single	1	Healthy Donor:133,COVID19:254	0.00657304189622504	True
+hexanoylglycine	0.004554561421852843	single	1	Healthy Donor:133,COVID19:254	0.006666935598539765	True
+4-ethylcatechol sulfate	0.004573572011366979	single	1	Healthy Donor:133,COVID19:254	0.006683240340190302	True
+N-stearoyltaurine	0.004869000760149086	single	1	Healthy Donor:133,COVID19:254	0.007102717603722636	True
+N-acetyl-beta-alanine	0.005090032094904136	single	1	Healthy Donor:133,COVID19:254	0.007412413805443587	True
+butyrylcarnitine (C4)	0.005280779311362204	single	1	Healthy Donor:133,COVID19:254	0.00767702334819608	True
+3-methoxytyramine sulfate	0.005472247243632912	single	1	Healthy Donor:133,COVID19:254	0.007941774204862124	True
+1-stearoyl-GPE (18:0)	0.005564355417299438	single	1	Healthy Donor:133,COVID19:254	0.008061668514142018	True
+butyrate (4:0)	0.005674774681657556	single	1	Healthy Donor:133,COVID19:254	0.0082076383385473	True
+o-cresol sulfate	0.005690511050358308	single	1	Healthy Donor:133,COVID19:254	0.008216401159445925	True
+4-vinylcatechol sulfate	0.0057106751641098205	single	1	Healthy Donor:133,COVID19:254	0.008231516492918908	True
+2-hydroxypalmitate	0.006336896314532873	single	1	Healthy Donor:133,COVID19:254	0.009118686391590523	True
+1-palmitoyl-2-(hydroxylinoleoyl)-GPC (16:0/18:2(OH))	0.006359281684270527	single	1	Healthy Donor:133,COVID19:254	0.009135414805322636	True
+5alpha-androstan-3alpha,17alpha-diol monosulfate	0.006676062015685182	single	1	Healthy Donor:133,COVID19:254	0.009574284883980946	True
+oleoyl-oleoyl-glycerol (18:1/18:1)	0.006930413256277139	aggregate	2	Healthy Donor:133,COVID19:254	0.00992229486438329	True
+3-methyl-2-oxovalerate	0.007227823010153775	single	1	Healthy Donor:133,COVID19:254	0.010330676322593527	True
+guaiacol sulfate	0.007484620143466387	single	1	Healthy Donor:133,COVID19:254	0.010679735297147837	True
+1-docosahexaenoyl-GPE (22:6)	0.00800492622981031	single	1	Healthy Donor:133,COVID19:254	0.011402990552196231	True
+1-palmitoyl-2-oleoyl-GPC (16:0/18:1)	0.008312114913199777	single	1	Healthy Donor:133,COVID19:254	0.011820746333846919	True
+S-allylcysteine	0.008701313520196851	single	1	Healthy Donor:133,COVID19:254	0.012353537088038673	True
+1-stearoyl-2-docosahexaenoyl-GPC (18:0/22:6)	0.008858537160002325	single	1	Healthy Donor:133,COVID19:254	0.012555756341973246	True
+glutamine_degradant	0.00939122955245907	single	1	Healthy Donor:133,COVID19:254	0.013288589816729585	True
+lactosyl-N-nervonoyl-sphingosine (d18:1/24:1)	0.010809682516487937	single	1	Healthy Donor:133,COVID19:254	0.015270250343591111	True
+arachidonoylcholine	0.011000092893760454	single	1	Healthy Donor:133,COVID19:254	0.015513420044522632	True
+retinal	0.012267055721710569	single	1	Healthy Donor:133,COVID19:254	0.01727152621514473	True
+GlcNAc sulfate conjugate of C21H34O2 steroid	0.013290428860638808	single	1	Healthy Donor:133,COVID19:254	0.01868141407728866	True
+tetrahydrocortisol glucuronide	0.013399186034120977	single	1	Healthy Donor:133,COVID19:254	0.018803155277634234	True
+tartronate (hydroxymalonate)	0.013894786400567103	single	1	Healthy Donor:133,COVID19:254	0.01945997749125936	True
+deoxycholic acid glucuronide	0.013927388054281006	single	1	Healthy Donor:133,COVID19:254	0.01945997749125936	True
+ethyl glucuronide	0.013936002726367127	single	1	Healthy Donor:133,COVID19:254	0.01945997749125936	True
+erucate (22:1n9)	0.014141427725162197	single	1	Healthy Donor:133,COVID19:254	0.019714404168575873	True
+N-acetyl-2-aminoadipate	0.015154172300979745	single	1	Healthy Donor:133,COVID19:254	0.02109162669431443	True
+phenol sulfate	0.01564766716603678	single	1	Healthy Donor:133,COVID19:254	0.02174283048112148	True
+alanine	0.01572815832490148	single	1	Healthy Donor:133,COVID19:254	0.02180731415984364	True
+gamma-glutamylisoleucine	0.015745445912819966	single	1	Healthy Donor:133,COVID19:254	0.02180731415984364	True
+indolelactate	0.015843337804918024	single	1	Healthy Donor:133,COVID19:254	0.021907156020155378	True
+11beta-hydroxyandrosterone glucuronide	0.016445581205840245	single	1	Healthy Donor:133,COVID19:254	0.022702924298794093	True
+7-methylguanine	0.01811639278283285	single	1	Healthy Donor:133,COVID19:254	0.024968859533482286	True
+hydroxyasparagine	0.01831400578647669	single	1	Healthy Donor:133,COVID19:254	0.025200309420937945	True
+3-bromo-5-chloro-2,6-dihydroxybenzoic acid	0.018359408561463113	single	1	Healthy Donor:133,COVID19:254	0.02522190593637894	True
+3-aminoisobutyrate	0.01955294652434206	single	1	Healthy Donor:133,COVID19:254	0.026818177058427158	True
+2,3-dihydroxyisovalerate	0.020331320946903816	single	1	Healthy Donor:133,COVID19:254	0.02784079271600216	True
+oleoyl-linoleoyl-glycerol (18:1/18:2)	0.021087982664323233	aggregate	2	Healthy Donor:133,COVID19:254	0.02883043040581389	True
+5alpha-pregnan-3beta,20alpha-diol monosulfate	0.021214694997296214	single	1	Healthy Donor:133,COVID19:254	0.02895703545450882	True
+tyramine O-sulfate	0.022267154392427997	single	1	Healthy Donor:133,COVID19:254	0.030344805905572023	True
+5alpha-androstan-3alpha,17beta-diol monosulfate	0.022495862413048722	single	1	Healthy Donor:133,COVID19:254	0.030607351263907637	True
+arginine	0.023287166568975025	single	1	Healthy Donor:133,COVID19:254	0.03163328706729567	True
+ergothioneine	0.023814106310890384	single	1	Healthy Donor:133,COVID19:254	0.03225060073891619	True
+trans-4-hydroxyproline	0.023817581464429274	single	1	Healthy Donor:133,COVID19:254	0.03225060073891619	True
+tyrosine	0.024101368692622624	single	1	Healthy Donor:133,COVID19:254	0.03258290130579077	True
+indole-3-carboxylate	0.024723003280311243	single	1	Healthy Donor:133,COVID19:254	0.033370158640674476	True
+methyl glucopyranoside (alpha + beta)	0.02588971566318108	single	1	Healthy Donor:133,COVID19:254	0.034889473965144024	True
+3,7-dimethylurate	0.026016255683746135	single	1	Healthy Donor:133,COVID19:254	0.035004439105389015	True
+1-oleoyl-GPI (18:1)	0.027048588442904496	single	1	Healthy Donor:133,COVID19:254	0.03633584112029418	True
+1-palmitoyl-2-linoleoyl-GPC (16:0/18:2)	0.02764106489100214	single	1	Healthy Donor:133,COVID19:254	0.03707308703390334	True
+gentisate	0.03103469538067898	single	1	Healthy Donor:133,COVID19:254	0.04155907946087769	True
+linoleoylcholine	0.0312122737079483	single	1	Healthy Donor:133,COVID19:254	0.041731055713461584	True
+threonine	0.03267990196646555	single	1	Healthy Donor:133,COVID19:254	0.043624586115612034	True
+1,5-anhydroglucitol (1,5-AG)	0.035002401550501855	single	1	Healthy Donor:133,COVID19:254	0.04665155245898913	True
+N,N-dimethylalanine	0.035518960756197544	single	1	Healthy Donor:133,COVID19:254	0.04726582708779266	True
+4-guanidinobutanoate	0.03594014542102387	single	1	Healthy Donor:133,COVID19:254	0.04775146081760448	True
+S-1-pyrroline-5-carboxylate	0.03647793994948008	single	1	Healthy Donor:133,COVID19:254	0.04839026721423217	True
+3-hydroxypyridine sulfate	0.0366218132361875	single	1	Healthy Donor:133,COVID19:254	0.04850533453591761	True
+gamma-glutamyl-alpha-lysine	0.03720384860136064	single	1	Healthy Donor:133,COVID19:254	0.049199482028902154	True
+allantoin	0.03792296341596105	single	1	Healthy Donor:133,COVID19:254	0.05007246646990813	False
+androstenediol (3alpha, 17alpha) monosulfate	0.0420275500158401	aggregate	2	Healthy Donor:133,COVID19:254	0.05540588503641032	False
+1-palmitoyl-2-palmitoleoyl-GPC (16:0/16:1)	0.042236763951779895	single	1	Healthy Donor:133,COVID19:254	0.05559536836443586	False
+2-stearoyl-GPI (18:0)	0.044014178408594215	single	1	Healthy Donor:133,COVID19:254	0.057845259239777846	False
+diacylglycerol (16:1/18:2 [2], 16:0/18:3 [1])	0.04446844685472755	single	1	Healthy Donor:133,COVID19:254	0.058351949582169535	False
+13-HODE + 9-HODE	0.04468434300185856	single	1	Healthy Donor:133,COVID19:254	0.058544764210768395	False
+gamma-CEHC glucuronide	0.04664822839628883	single	1	Healthy Donor:133,COVID19:254	0.06102364546756427	False
+3-hydroxystachydrine	0.04700841697546648	single	1	Healthy Donor:133,COVID19:254	0.061400224634109296	False
+sphingomyelin (d18:1/18:1, d18:2/18:0)	0.04760835145744932	single	1	Healthy Donor:133,COVID19:254	0.062088310886903954	False
+3-methyl catechol sulfate	0.04940829767329356	single	1	Healthy Donor:133,COVID19:254	0.06433687841200342	False
+docosahexaenoylcarnitine (C22:6)	0.05204146554638189	single	1	Healthy Donor:133,COVID19:254	0.06766187480685792	False
+hydroquinone sulfate	0.05430610718041396	single	1	Healthy Donor:133,COVID19:254	0.0704982951011796	False
+1-arachidonylglycerol (20:4)	0.05473300628040236	single	1	Healthy Donor:133,COVID19:254	0.0709440035603994	False
+N2,N5-diacetylornithine	0.056692492519395336	single	1	Healthy Donor:133,COVID19:254	0.07337183864171744	False
+cys-gly, oxidized	0.05801231153484737	single	1	Healthy Donor:133,COVID19:254	0.07496568111580734	False
+trimethylamine N-oxide	0.05828329495134736	single	1	Healthy Donor:133,COVID19:254	0.07520139424573542	False
+palmitoyl sphingomyelin (d18:1/16:0)	0.058505239771086265	single	1	Healthy Donor:133,COVID19:254	0.07537321481889567	False
+serotonin	0.05936193177570482	single	1	Healthy Donor:133,COVID19:254	0.07636103042056575	False
+N-acetylhistidine	0.05991609091350732	single	1	Healthy Donor:133,COVID19:254	0.07695727864684979	False
+tetradecanedioate (C14-DC)	0.060531052389083524	single	1	Healthy Donor:133,COVID19:254	0.07762970313947419	False
+N-acetylcitrulline	0.06438382439153073	single	1	Healthy Donor:133,COVID19:254	0.08244625476381537	False
+valine	0.06460327149541305	single	1	Healthy Donor:133,COVID19:254	0.08260267695723747	False
+linoleoyl-linolenoyl-glycerol (18:2/18:3)	0.06495771493840513	single	1	Healthy Donor:133,COVID19:254	0.08293097741760294	False
+hexanoylcarnitine (C6)	0.06718958944902673	single	1	Healthy Donor:133,COVID19:254	0.08556516981743048	False
+methylsuccinate	0.06722257746551959	single	1	Healthy Donor:133,COVID19:254	0.08556516981743048	False
+glutamine	0.06957945752261145	single	1	Healthy Donor:133,COVID19:254	0.08843257400703161	False
+4-hydroxyglutamate	0.07009802745015996	single	1	Healthy Donor:133,COVID19:254	0.08885768479796878	False
+1-(1-enyl-palmitoyl)-2-arachidonoyl-GPE (P-16:0/20:4)	0.07020416525459965	single	1	Healthy Donor:133,COVID19:254	0.08885768479796878	False
+4-hydroxyhippurate	0.07022792284974917	single	1	Healthy Donor:133,COVID19:254	0.08885768479796878	False
+3-hydroxyhexanoate	0.0713716560470511	single	1	Healthy Donor:133,COVID19:254	0.09017044045230117	False
+3-hydroxy-2-ethylpropionate	0.07241039007809326	single	1	Healthy Donor:133,COVID19:254	0.091346836814712	False
+1-(1-enyl-palmitoyl)-2-oleoyl-GPE (P-16:0/18:1)	0.07508827685504871	single	1	Healthy Donor:133,COVID19:254	0.0945844911720124	False
+1-oleoyl-2-dihomo-linoleoyl-GPC (18:1/20:2)	0.07574686391529464	single	1	Healthy Donor:133,COVID19:254	0.09527272216901504	False
+1,2,3-benzenetriol sulfate	0.07742704742016301	single	1	Healthy Donor:133,COVID19:254	0.09724195748479053	False
+N-acetylarginine	0.07809676592902515	single	1	Healthy Donor:133,COVID19:254	0.09793818947377009	False
+1-palmitoyl-2-adrenoyl-GPC (16:0/22:4)	0.0806758070284756	single	1	Healthy Donor:133,COVID19:254	0.10102324508433007	False
+3-methoxytyrosine	0.08091438859915906	single	1	Healthy Donor:133,COVID19:254	0.10117277749732849	False
+1-arachidoyl-2-arachidonoyl-GPC (20:0/20:4)	0.08514003885614492	single	1	Healthy Donor:133,COVID19:254	0.10629984263068681	False
+21-hydroxypregnenolone disulfate	0.08719147721934896	single	1	Healthy Donor:133,COVID19:254	0.10870126895628085	False
+glutamine conjugate of C7H12O2	0.09217513063475401	single	1	Healthy Donor:133,COVID19:254	0.11474587376672456	False
+glutamine conjugate of C6H10O2	0.09391354403018982	aggregate	2	Healthy Donor:133,COVID19:254	0.11673879777691239	False
+1-margaroyl-2-docosahexaenoyl-GPC (17:0/22:6)	0.09492294208185753	single	1	Healthy Donor:133,COVID19:254	0.11782102021563896	False
+1-stearoyl-2-docosahexaenoyl-GPI (18:0/22:6)	0.09558002726978436	single	1	Healthy Donor:133,COVID19:254	0.11846342065992252	False
+glycolithocholate sulfate	0.09965524323140434	single	1	Healthy Donor:133,COVID19:254	0.12333425875140276	False
+methionine sulfone	0.10113016586525105	single	1	Healthy Donor:133,COVID19:254	0.12497745388587793	False
+p-cresol glucuronide	0.10228488646826063	single	1	Healthy Donor:133,COVID19:254	0.1262207392609786	False
+alpha-hydroxyisocaproate	0.10331517195418613	single	1	Healthy Donor:133,COVID19:254	0.1273070841641568	False
+hippurate	0.1036277091753808	single	1	Healthy Donor:133,COVID19:254	0.12750713781144682	False
+1-linoleoyl-GPG (18:2)	0.1041235913114441	single	1	Healthy Donor:133,COVID19:254	0.12793187991811292	False
+1-docosapentaenoyl-GPC (22:5n6)	0.10477384264057168	single	1	Healthy Donor:133,COVID19:254	0.128544786707869	False
+3-methylcytidine	0.1052273718563855	single	1	Healthy Donor:133,COVID19:254	0.12891491876777963	False
+1-stearoyl-GPI (18:0)	0.10571680851674539	single	1	Healthy Donor:133,COVID19:254	0.12932791128345364	False
+lysine	0.1081339098256944	single	1	Healthy Donor:133,COVID19:254	0.13209451718275475	False
+1-myristoyl-2-palmitoyl-GPC (14:0/16:0)	0.10922075836172843	single	1	Healthy Donor:133,COVID19:254	0.1332304940360739	False
+2-arachidonoyl-GPE (20:4)	0.11069962040892646	single	1	Healthy Donor:133,COVID19:254	0.13484071409925188	False
+gamma-glutamylleucine	0.1116196122253767	single	1	Healthy Donor:133,COVID19:254	0.13576654839447683	False
+cis-3,4-methyleneheptanoylcarnitine	0.11591290064874943	single	1	Healthy Donor:133,COVID19:254	0.14078691366350254	False
+arabonate	0.1163727237311335	single	1	Healthy Donor:133,COVID19:254	0.1411434892110462	False
+ursodeoxycholate	0.11822333661989057	single	1	Healthy Donor:133,COVID19:254	0.14318347045690027	False
+2'-O-methyluridine	0.12274535486032866	single	1	Healthy Donor:133,COVID19:254	0.1484484419892009	False
+1-oleoyl-GPG (18:1)	0.1229796103704869	single	1	Healthy Donor:133,COVID19:254	0.14852018379024662	False
+1-dihomo-linolenoyl-GPE (20:3n3 or 6)	0.12714804326844067	single	1	Healthy Donor:133,COVID19:254	0.1533362055893553	False
+leucylphenylalanine	0.12812234218973756	single	1	Healthy Donor:133,COVID19:254	0.1542920120838116	False
+pregnenediol disulfate (C21H34O8S2)	0.12903878954513656	single	1	Healthy Donor:133,COVID19:254	0.15517554153515714	False
+taurocholenate sulfate	0.13690505556337126	single	1	Healthy Donor:133,COVID19:254	0.16440225201315728	False
+2-butenoylglycine	0.14602065717016785	single	1	Healthy Donor:133,COVID19:254	0.1751010422845657	False
+1-dihomo-linolenylglycerol (20:3)	0.14713711687835163	single	1	Healthy Donor:133,COVID19:254	0.17619099045094572	False
+1-stearoyl-2-docosapentaenoyl-GPC (18:0/22:5n6)	0.14740290528986105	single	1	Healthy Donor:133,COVID19:254	0.17626065717055217	False
+pyroglutamylalanine	0.15418345803421565	single	1	Healthy Donor:133,COVID19:254	0.18410936128136302	False
+1-ribosyl-imidazoleacetate	0.15503212084963205	single	1	Healthy Donor:133,COVID19:254	0.18486273960862026	False
+eugenol sulfate	0.16207788172339316	single	1	Healthy Donor:133,COVID19:254	0.19299315790064628	False
+phenylacetylcarnitine	0.16891484986354413	single	1	Healthy Donor:133,COVID19:254	0.20085253156043273	False
+gamma-glutamylthreonine	0.1691684377011278	single	1	Healthy Donor:133,COVID19:254	0.20087273231924127	False
+succinate	0.1762238184846796	single	1	Healthy Donor:133,COVID19:254	0.20895813113616338	False
+2-naphthol sulfate	0.17683597787199287	single	1	Healthy Donor:133,COVID19:254	0.20939155538817567	False
+5alpha-androstan-3beta,17alpha-diol disulfate	0.1771537522905864	single	1	Healthy Donor:133,COVID19:254	0.20947567645502488	False
+N-oleoyltaurine	0.17911543206525093	single	1	Healthy Donor:133,COVID19:254	0.2115006979463116	False
+metabolonic lactone sulfate	0.1846052764952868	single	1	Healthy Donor:133,COVID19:254	0.21768038853402566	False
+2'-O-methylcytidine	0.1872843997546014	single	1	Healthy Donor:133,COVID19:254	0.22053322523114643	False
+cyclo(ala-pro)	0.1879152406112994	single	1	Healthy Donor:133,COVID19:254	0.22096958348891024	False
+creatinine	0.20451974717415666	single	1	Healthy Donor:133,COVID19:254	0.24016219273977735	False
+5-acetylamino-6-formylamino-3-methyluracil	0.20567861869118942	single	1	Healthy Donor:133,COVID19:254	0.24118942992930914	False
+lithocholate sulfate	0.21668215397719473	single	1	Healthy Donor:133,COVID19:254	0.25374227410570804	False
+deoxycarnitine	0.22009085719935698	single	1	Healthy Donor:133,COVID19:254	0.2573789776339588	False
+N-acetyl-1-methylhistidine	0.2242922627399504	single	1	Healthy Donor:133,COVID19:254	0.2619314044927344	False
+3-methylglutarylcarnitine	0.2265734625554502	single	1	Healthy Donor:133,COVID19:254	0.2642319638867819	False
+sphingomyelin (d18:2/24:2)	0.22952139157964607	single	1	Healthy Donor:133,COVID19:254	0.2673026906051022	False
+argininate	0.23129998988893632	single	1	Healthy Donor:133,COVID19:254	0.2690050567338451	False
+taurolithocholate 3-sulfate	0.23434226415726517	single	1	Healthy Donor:133,COVID19:254	0.27217042718128337	False
+1-palmitoyl-GPE (16:0)	0.23738684274858798	single	1	Healthy Donor:133,COVID19:254	0.27532982171250164	False
+pimeloylcarnitine	0.23973841157002798	single	1	Healthy Donor:133,COVID19:254	0.27767791462885916	False
+1-palmityl-2-oleoyl-GPC (O-16:0/18:1)	0.24061713963831385	single	1	Healthy Donor:133,COVID19:254	0.2783160102900933	False
+acetylcarnitine (C2)	0.24141260365930528	single	1	Healthy Donor:133,COVID19:254	0.27885619116564647	False
+pregnenetriol disulfate	0.24821205311828246	single	1	Healthy Donor:133,COVID19:254	0.2863206971432361	False
+12,13-DiHOME	0.25220782838745576	single	1	Healthy Donor:133,COVID19:254	0.29053520529301213	False
+3-(4-hydroxyphenyl)lactate	0.25258145019672185	single	1	Healthy Donor:133,COVID19:254	0.29057134311248894	False
+gamma-glutamylvaline	0.253930262962581	single	1	Healthy Donor:133,COVID19:254	0.2917277310625592	False
+deoxycholic acid 12-sulfate	0.2584847849514733	single	1	Healthy Donor:133,COVID19:254	0.29655889516729844	False
+imidazole lactate	0.26106444289220154	single	1	Healthy Donor:133,COVID19:254	0.2991143212084738	False
+isoursodeoxycholate	0.2634816864253228	single	1	Healthy Donor:133,COVID19:254	0.3014770239556591	False
+nervonoylcarnitine (C24:1)	0.2747606301538054	single	1	Healthy Donor:133,COVID19:254	0.3139593203237965	False
+deoxycholate	0.2800546814841363	single	1	Healthy Donor:133,COVID19:254	0.319578527661333	False
+glycosyl ceramide (d18:2/24:1, d18:1/24:2)	0.2813937732059969	single	1	Healthy Donor:133,COVID19:254	0.3206755885260287	False
+4-methylhexanoylglutamine	0.2952474893487248	single	1	Healthy Donor:133,COVID19:254	0.3357495061333417	False
+1-methylhistidine	0.2954121096367565	single	1	Healthy Donor:133,COVID19:254	0.3357495061333417	False
+1-stearoyl-2-adrenoyl-GPC (18:0/22:4)	0.29822798277342083	single	1	Healthy Donor:133,COVID19:254	0.3384967344580672	False
+stearoyl sphingomyelin (d18:1/18:0)	0.3003289631662551	single	1	Healthy Donor:133,COVID19:254	0.3404262880215629	False
+1-margaroyl-GPE (17:0)	0.3021143922609438	single	1	Healthy Donor:133,COVID19:254	0.3419934920393884	False
+sphingomyelin (d18:2/23:1)	0.3099906187518415	single	1	Healthy Donor:133,COVID19:254	0.3504421242614027	False
+7-alpha-hydroxy-3-oxo-4-cholestenoate (7-Hoca)	0.3142812048026611	single	1	Healthy Donor:133,COVID19:254	0.354820136805132	False
+sphingomyelin (d18:2/24:1, d18:1/24:2)	0.322700198072586	single	1	Healthy Donor:133,COVID19:254	0.36384125918144156	False
+5-(galactosylhydroxy)-L-lysine	0.34153217220411125	single	1	Healthy Donor:133,COVID19:254	0.38456341406006694	False
+gamma-glutamylalanine	0.3501586491808273	single	1	Healthy Donor:133,COVID19:254	0.39375456046956603	False
+N-acetylaspartate (NAA)	0.3523817211332302	single	1	Healthy Donor:133,COVID19:254	0.3957302661932704	False
+ethyl alpha-glucopyranoside	0.3531020748106881	single	1	Healthy Donor:133,COVID19:254	0.39601540490657094	False
+decadienedioic acid (C10:2-DC)	0.35686583784619885	single	1	Healthy Donor:133,COVID19:254	0.3997085703580776	False
+N2-acetyl,N6,N6-dimethyllysine	0.35949784059729084	single	1	Healthy Donor:133,COVID19:254	0.4021260430396573	False
+lactosyl-N-palmitoyl-sphingosine (d18:1/16:0)	0.3663572170169189	single	1	Healthy Donor:133,COVID19:254	0.4089872060331602	False
+N,N,N-trimethyl-5-aminovalerate	0.3665951281404416	single	1	Healthy Donor:133,COVID19:254	0.4089872060331602	False
+serine	0.37650780123435745	single	1	Healthy Donor:133,COVID19:254	0.41949491239891007	False
+5,6-dihydrothymine	0.3792297744196296	single	1	Healthy Donor:133,COVID19:254	0.4219738905403218	False
+4-imidazoleacetate	0.37979033786089966	single	1	Healthy Donor:133,COVID19:254	0.4220444984867851	False
+salicylate	0.3883696485114386	single	1	Healthy Donor:133,COVID19:254	0.4310141589362241	False
+1-oleoyl-GPE (18:1)	0.39610220750032676	single	1	Healthy Donor:133,COVID19:254	0.43902189839135436	False
+4-chlorobenzoic acid	0.4023992166199162	single	1	Healthy Donor:133,COVID19:254	0.4454197326079646	False
+palmitoylcholine	0.40610197327819186	single	1	Healthy Donor:133,COVID19:254	0.44893304077237617	False
+aconitate [cis or trans]	0.40884349396333997	single	1	Healthy Donor:133,COVID19:254	0.45137597708046245	False
+pregnanediol-3-glucuronide	0.421666511180689	single	1	Healthy Donor:133,COVID19:254	0.4649283999901363	False
+N-acetylkynurenine	0.4238812552835185	single	1	Healthy Donor:133,COVID19:254	0.4667641838336021	False
+palmitoleoyl-arachidonoyl-glycerol (16:1/20:4)	0.4385142295320492	single	1	Healthy Donor:133,COVID19:254	0.4822520477625774	False
+5alpha-pregnan-3beta,20beta-diol monosulfate	0.44116816811154513	single	1	Healthy Donor:133,COVID19:254	0.4843856914677694	False
+2-linoleoyl-GPE (18:2)	0.4415954360377544	single	1	Healthy Donor:133,COVID19:254	0.4843856914677694	False
+cholate	0.44623572621934504	single	1	Healthy Donor:133,COVID19:254	0.4888440407228696	False
+1-palmitoyl-GPI (16:0)	0.45099527544669216	single	1	Healthy Donor:133,COVID19:254	0.4934213773894866	False
+cortisol	0.4565039067114125	single	1	Healthy Donor:133,COVID19:254	0.49880542702443914	False
+caprate (10:0)	0.4680155011481296	single	1	Healthy Donor:133,COVID19:254	0.5107264273454525	False
+5alpha-androstan-3beta,17beta-diol monosulfate	0.4827268895082861	single	1	Healthy Donor:133,COVID19:254	0.5261041453049229	False
+ethylmalonate	0.5043070013029236	single	1	Healthy Donor:133,COVID19:254	0.5489187744951053	False
+1-palmitoyl-2-linoleoyl-GPI (16:0/18:2)	0.516999680445648	single	1	Healthy Donor:133,COVID19:254	0.5620137371297762	False
+3-methylglutaconate	0.5330499894030754	single	1	Healthy Donor:133,COVID19:254	0.5787205127918299	False
+maltose	0.537410477585691	single	1	Healthy Donor:133,COVID19:254	0.5827094450450213	False
+phosphate	0.5382522844911595	single	1	Healthy Donor:133,COVID19:254	0.5828777927716765	False
+3b-hydroxy-5-cholenoic acid	0.5453036859824503	single	1	Healthy Donor:133,COVID19:254	0.5897615661135035	False
+1-linolenoyl-GPE (18:3)	0.5484584227759801	single	1	Healthy Donor:133,COVID19:254	0.592418830708406	False
+phosphatidylcholine (15:0/18:1, 17:0/16:1, 16:0/17:1)	0.5541115757430737	single	1	Healthy Donor:133,COVID19:254	0.5977645842514225	False
+phenylacetylglutamine	0.5734713466081155	single	1	Healthy Donor:133,COVID19:254	0.6178644330841244	False
+isoleucylalanine	0.5885553498099092	single	1	Healthy Donor:133,COVID19:254	0.6333124106319555	False
+valylglycine	0.5917454936283741	single	1	Healthy Donor:133,COVID19:254	0.6359391444183413	False
+sphingomyelin (d18:1/22:2, d18:2/22:1, d16:1/24:2)	0.5933392253309613	single	1	Healthy Donor:133,COVID19:254	0.636845767769894	False
+glycosyl-N-palmitoyl-sphingosine (d18:1/16:0)	0.600675216407941	single	1	Healthy Donor:133,COVID19:254	0.6433476386113184	False
+carnitine	0.6009124586793586	single	1	Healthy Donor:133,COVID19:254	0.6433476386113184	False
+O-sulfo-L-tyrosine	0.6033697101747124	single	1	Healthy Donor:133,COVID19:254	0.6451648412321547	False
+phenylacetylglutamate	0.612611139056173	single	1	Healthy Donor:133,COVID19:254	0.6542224617090452	False
+succinimide	0.6179534845279138	single	1	Healthy Donor:133,COVID19:254	0.6590986285982396	False
+2-hydroxyhippurate (salicylurate)	0.6220249868369448	single	1	Healthy Donor:133,COVID19:254	0.6626088002817643	False
+adenosine 3',5'-cyclic monophosphate (cAMP)	0.6234732915092845	single	1	Healthy Donor:133,COVID19:254	0.6633193289365696	False
+xanthine	0.6487985566755747	single	1	Healthy Donor:133,COVID19:254	0.6893992172935707	False
+cysteine	0.6517401022314725	single	1	Healthy Donor:133,COVID19:254	0.6916591834931501	False
+tiglylcarnitine (C5:1-DC)	0.6542849556801722	single	1	Healthy Donor:133,COVID19:254	0.6928541806342463	False
+caffeine	0.6544982954872386	single	1	Healthy Donor:133,COVID19:254	0.6928541806342463	False
+N-acetylglycine	0.6633730560817828	single	1	Healthy Donor:133,COVID19:254	0.7013745013865923	False
+pantothenate	0.6650365690948328	single	1	Healthy Donor:133,COVID19:254	0.701619857066205	False
+ceramide (d16:1/24:1, d18:1/22:1)	0.6652579327895112	single	1	Healthy Donor:133,COVID19:254	0.701619857066205	False
+2-palmitoyl-GPE (16:0)	0.6699555817942474	single	1	Healthy Donor:133,COVID19:254	0.7056976289619306	False
+ethyl beta-glucopyranoside	0.6863313837093326	single	1	Healthy Donor:133,COVID19:254	0.7220512326756175	False
+N-palmitoylserine	0.6875962862276782	single	1	Healthy Donor:133,COVID19:254	0.7224866918407163	False
+3-hydroxybutyrate (BHBA)	0.6889132190487179	single	1	Healthy Donor:133,COVID19:254	0.7229756773453171	False
+sphingomyelin (d18:0/18:0, d19:0/17:0)	0.6900070998362301	single	1	Healthy Donor:133,COVID19:254	0.7232296639024189	False
+branched-chain fatty acid 18:0	0.6915706409248779	single	1	Healthy Donor:133,COVID19:254	0.7236964201760322	False
+trans-2-hexenoylglycine	0.6921572357867352	single	1	Healthy Donor:133,COVID19:254	0.7236964201760322	False
+xanthurenate	0.6946876842414512	single	1	Healthy Donor:133,COVID19:254	0.7254487625104453	False
+sulfate	0.7060064619358621	single	1	Healthy Donor:133,COVID19:254	0.7363630051394926	False
+1-stearoyl-2-oleoyl-GPC (18:0/18:1)	0.7090681188467117	single	1	Healthy Donor:133,COVID19:254	0.7386488747249794	False
+gamma-glutamylglutamate	0.7116480775862626	single	1	Healthy Donor:133,COVID19:254	0.7404279630768835	False
+indoleacetylglutamine	0.7342194235580105	single	1	Healthy Donor:133,COVID19:254	0.7629770998785201	False
+N1-Methyl-2-pyridone-5-carboxamide	0.7505626015714465	single	1	Healthy Donor:133,COVID19:254	0.7790069055429806	False
+methyl indole-3-acetate	0.7615477476699561	single	1	Healthy Donor:133,COVID19:254	0.7894432695626286	False
+maltotriose	0.784298001947769	single	1	Healthy Donor:133,COVID19:254	0.8120353703093365	False
+1-margaroyl-2-oleoyl-GPC (17:0/18:1)	0.791367497564021	single	1	Healthy Donor:133,COVID19:254	0.8183568884675443	False
+glycerophosphoethanolamine	0.8102780141467361	single	1	Healthy Donor:133,COVID19:254	0.8368929854143295	False
+oleoylcholine	0.8119687157578559	single	1	Healthy Donor:133,COVID19:254	0.8376202183212875	False
+gamma-glutamyltryptophan	0.8148083489063244	single	1	Healthy Donor:133,COVID19:254	0.8395294759969288	False
+2-oleoyl-GPE (18:1)	0.8177913222077754	single	1	Healthy Donor:133,COVID19:254	0.8415816152174561	False
+1-palmitoyl-2-arachidonoyl-GPI (16:0/20:4)	0.8285334413564921	single	1	Healthy Donor:133,COVID19:254	0.8516039851230772	False
+1-stearoyl-2-linoleoyl-GPI (18:0/18:2)	0.837496031178731	single	1	Healthy Donor:133,COVID19:254	0.859607932558337	False
+dodecanedioate (C12-DC)	0.8383455455339259	single	1	Healthy Donor:133,COVID19:254	0.859607932558337	False
+vanillylmandelate (VMA)	0.8452985301974476	single	1	Healthy Donor:133,COVID19:254	0.8656917396111374	False
+octadecadienedioate (C18:2-DC)	0.8631340742248563	single	1	Healthy Donor:133,COVID19:254	0.8828925650806061	False
+thyroxine	0.866472998944433	single	1	Healthy Donor:133,COVID19:254	0.8852413671526157	False
+arachidate (20:0)	0.8709564824564142	single	1	Healthy Donor:133,COVID19:254	0.8887524682758362	False
+pregnenolone sulfate	0.8745896437161331	single	1	Healthy Donor:133,COVID19:254	0.8913884844117611	False
+2-stearoyl-GPE (18:0)	0.8849618889651192	single	1	Healthy Donor:133,COVID19:254	0.9008784697019019	False
+1-palmitoyl-2-oleoyl-GPI (16:0/18:1)	0.8897609920356357	single	1	Healthy Donor:133,COVID19:254	0.9046791404050956	False
+2-piperidinone	0.9033092304368828	single	1	Healthy Donor:133,COVID19:254	0.917355905072863	False
+1-(1-enyl-stearoyl)-2-docosapentaenoyl-GPE (P-18:0/22:5n3)	0.9058329466744806	single	1	Healthy Donor:133,COVID19:254	0.918819798956552	False
+sphingomyelin (d18:1/20:2, d18:2/20:1, d16:1/22:2)	0.9163002427271465	single	1	Healthy Donor:133,COVID19:254	0.928328050209245	False
+1-linoleoyl-GPI (18:2)	0.9251983976481597	single	1	Healthy Donor:133,COVID19:254	0.9362257921374106	False
+5alpha-pregnan-3beta,20alpha-diol disulfate	0.9315193567906813	single	1	Healthy Donor:133,COVID19:254	0.9414999213277243	False
+3,5-dichloro-2,6-dihydroxybenzoic acid	0.9348206613867467	single	1	Healthy Donor:133,COVID19:254	0.9437131290337074	False
+glutarylcarnitine (C5-DC)	0.9360350860073049	single	1	Healthy Donor:133,COVID19:254	0.9438168503802872	False
+corticosterone	0.9399904096674985	single	1	Healthy Donor:133,COVID19:254	0.9466807328679789	False
+2-aminobutyrate	0.9658194229598058	single	1	Healthy Donor:133,COVID19:254	0.9710567773617046	False
+glycoursodeoxycholic acid sulfate	0.9664817159842642	single	1	Healthy Donor:133,COVID19:254	0.9710567773617046	False
+betaine	0.9747672351787082	single	1	Healthy Donor:133,COVID19:254	0.9782238565800512	False
+1-arachidonoyl-GPE (20:4n6)	0.9846016690828923	single	1	Healthy Donor:133,COVID19:254	0.9869265844762403	False
+dodecenedioate (C12:1-DC)	0.987886564471171	single	1	Healthy Donor:133,COVID19:254	0.9890515250424813	False
+docosadienoate (22:2n6)	0.9895929396029675	single	1	Healthy Donor:133,COVID19:254	0.9895929396029675	False

@@ -1,0 +1,132 @@
+Sample name	group
+MICH-01577	Lean
+MICH-01578	Lean
+MICH-01579	Lean
+MICH-01580	Lean
+MICH-01581	Lean
+MICH-01582	Lean
+MICH-01583	Lean
+MICH-01584	Lean
+MICH-01585	Lean
+MICH-01586	Lean
+MICH-01587	Lean
+MICH-01588	Lean
+MICH-01589	Lean
+MICH-01590	Lean
+MICH-01591	Lean
+MICH-01592	Lean
+MICH-01593	Lean
+MICH-01594	Lean
+MICH-01595	Lean
+MICH-01596	Lean
+MICH-01597	Lean
+MICH-01598	Lean
+MICH-01599	Lean
+MICH-01600	Lean
+MICH-01601	Lean
+MICH-01602	Lean
+MICH-01603	Lean
+MICH-01604	Lean
+MICH-01605	Lean
+MICH-01606	Lean
+MICH-01607	Lean
+MICH-01608	Lean
+MICH-01609	Lean
+MICH-01610	Lean
+MICH-01611	Lean
+MICH-01612	Lean
+MICH-01613	Lean
+MICH-01614	Lean
+MICH-01615	Lean
+MICH-01616	Lean
+MICH-01617	Lean
+MICH-01618	Lean
+MICH-01619	Lean
+MICH-01525	Obese neuropathy
+MICH-01526	Obese neuropathy
+MICH-01528	Obese neuropathy
+MICH-01531	Obese neuropathy
+MICH-01533	Obese neuropathy
+MICH-01534	Obese neuropathy
+MICH-01536	Obese neuropathy
+MICH-01542	Obese neuropathy
+MICH-01545	Obese neuropathy
+MICH-01547	Obese neuropathy
+MICH-01548	Obese neuropathy
+MICH-01551	Obese neuropathy
+MICH-01554	Obese neuropathy
+MICH-01555	Obese neuropathy
+MICH-01556	Obese neuropathy
+MICH-01557	Obese neuropathy
+MICH-01559	Obese neuropathy
+MICH-01560	Obese neuropathy
+MICH-01562	Obese neuropathy
+MICH-01563	Obese neuropathy
+MICH-01569	Obese neuropathy
+MICH-01571	Obese neuropathy
+MICH-01573	Obese neuropathy
+MICH-01574	Obese neuropathy
+MICH-01575	Obese neuropathy
+MICH-01576	Obese neuropathy
+MICH-01620	Obese neuropathy
+MICH-01621	Obese neuropathy
+MICH-01623	Obese neuropathy
+MICH-01624	Obese neuropathy
+MICH-01627	Obese neuropathy
+MICH-01631	Obese neuropathy
+MICH-01640	Obese neuropathy
+MICH-01642	Obese neuropathy
+MICH-01643	Obese neuropathy
+MICH-01644	Obese neuropathy
+MICH-01646	Obese neuropathy
+MICH-01648	Obese neuropathy
+MICH-01649	Obese neuropathy
+MICH-01650	Obese neuropathy
+MICH-01651	Obese neuropathy
+MICH-01653	Obese neuropathy
+MICH-01654	Obese neuropathy
+MICH-01655	Obese neuropathy
+MICH-01527	Obese non neuropathy
+MICH-01529	Obese non neuropathy
+MICH-01530	Obese non neuropathy
+MICH-01532	Obese non neuropathy
+MICH-01535	Obese non neuropathy
+MICH-01537	Obese non neuropathy
+MICH-01538	Obese non neuropathy
+MICH-01539	Obese non neuropathy
+MICH-01540	Obese non neuropathy
+MICH-01541	Obese non neuropathy
+MICH-01543	Obese non neuropathy
+MICH-01544	Obese non neuropathy
+MICH-01546	Obese non neuropathy
+MICH-01549	Obese non neuropathy
+MICH-01550	Obese non neuropathy
+MICH-01552	Obese non neuropathy
+MICH-01553	Obese non neuropathy
+MICH-01558	Obese non neuropathy
+MICH-01561	Obese non neuropathy
+MICH-01564	Obese non neuropathy
+MICH-01565	Obese non neuropathy
+MICH-01566	Obese non neuropathy
+MICH-01567	Obese non neuropathy
+MICH-01568	Obese non neuropathy
+MICH-01570	Obese non neuropathy
+MICH-01572	Obese non neuropathy
+MICH-01622	Obese non neuropathy
+MICH-01625	Obese non neuropathy
+MICH-01626	Obese non neuropathy
+MICH-01628	Obese non neuropathy
+MICH-01629	Obese non neuropathy
+MICH-01630	Obese non neuropathy
+MICH-01632	Obese non neuropathy
+MICH-01633	Obese non neuropathy
+MICH-01634	Obese non neuropathy
+MICH-01635	Obese non neuropathy
+MICH-01636	Obese non neuropathy
+MICH-01637	Obese non neuropathy
+MICH-01638	Obese non neuropathy
+MICH-01639	Obese non neuropathy
+MICH-01641	Obese non neuropathy
+MICH-01645	Obese non neuropathy
+MICH-01647	Obese non neuropathy
+MICH-01652	Obese non neuropathy

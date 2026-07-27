@@ -1,0 +1,8 @@
+built_at=2026-01-16 11:42:44 UTC
+source=KEGG_REST_map_pathways
+map_pathways=584
+rows=19564
+batch_size=10
+sleep_s=0.2
+timeout_s=60
+max_pathways=None
