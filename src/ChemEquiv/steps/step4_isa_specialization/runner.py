@@ -406,8 +406,7 @@ class Step4IsASpecialization:
                 else set()
             )
 
-            if not step3_chebis:
-                continue
+
 
             ref_mass = self._get_row_reference_mass(df_out, idx, step3_chebis, ctx=ctx)
 
