@@ -265,9 +265,6 @@ class StepwiseORA:
                 continue
 
             a = len(ids_in_pw & fg)                 # significant in pathway
-            if a == 0:
-                continue
-
             b = len(fg) - a                        # significant not in pathway
             c = len(ids_in_pw) - a                 # non-significant in pathway
             d = len(bg) - (a + b + c)              # non-significant not in pathway
